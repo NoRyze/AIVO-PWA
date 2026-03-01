@@ -1,0 +1,42 @@
+<div class="page" data-name="home-admin">
+  <div class="navbar">
+    <div class="navbar-inner">
+
+      <!-- BOUTON MENU GAUCHE -->
+      <a class="link panel-open" data-panel="left">
+        <i class="icon f7-icons">menu</i>
+      </a>
+
+      <div class="title">AIVO — Admin</div>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- STATISTIQUES -->
+    <div class="block-title">Statistiques système</div>
+    <div class="list simple-list">
+      <ul>
+        <li>Utilisateurs actifs : <span id="stat-users">...</span></li>
+        <li>Sessions ouvertes : <span id="stat-sessions">...</span></li>
+        <li>IP suspectes : <span id="stat-suspicious">...</span></li>
+      </ul>
+    </div>
+
+    <!-- ACTIONS RAPIDES -->
+    <div class="block-title">Actions rapides</div>
+    <div class="list">
+      <ul>
+        <li><a href="#" id="btn-revoke-all" class="item-link">Révoquer toutes les sessions</a></li>
+        <li><a href="#" id="btn-view-logs" class="item-link">Voir les logs backend</a></li>
+      </ul>
+    </div>
+
+    <!-- UTILISATEURS -->
+    <div class="block-title">Utilisateurs</div>
+    <div class="list media-list">
+      <ul id="admin-users-list"></ul>
+    </div>
+
+  </div>
+</div>

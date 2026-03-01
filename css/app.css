@@ -1,0 +1,72 @@
+/* MOde clair (iOS Lights) */
+:root {
+    --f7-theme-color: #007aff; /* Bleu iOS */
+    --f7-navbar-bg-color: #ffffff;
+    --f7-page-bg-color: #ffffff;
+    --f7-text-color: #000000;
+    --f7-card-bg-color: #ffffff;
+    --f7-card-border-color: #e5e5ea;
+}
+
+/* Mode sombre (iOS Dark) */
+@media (prefers-color-scheme: dark){
+    :root {
+        --f7-theme-color: #0a84ff; /* Bleu iOS Dark */
+        --f7-navbar-bg-color: #1c1c1e;
+        --f7-page-bg-color: #000000;
+        --f7-text-color: #ffffff;
+        --f7-card-bg-color: #1c1c1e;
+        --f7-card-border-color: #3a3a3c;
+    }
+}
+/* Style Général */
+body {
+    background: var(--f7-page-bg-color);
+}
+.login-screen-content {
+    margin-top: 40px;
+}
+.button-large {
+    border-radius: 12px;
+}
+.block-strong {
+    border-radius: 12px;
+    margin: 15px;
+}
+
+/* Exemple de bloc stylé */
+.block {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* Style des carte iOS */
+.card {
+    background-color: var(--f7-card-bg-color);
+    border: 1px solid var(--f7-card-border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px;
+}
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-screen-content {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.button-fill {
+    margin-top: 20px;
+}

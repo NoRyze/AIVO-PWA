@@ -1,0 +1,50 @@
+<div class="page" data-name="home-user">
+  <div class="navbar">
+    <div class="navbar-inner">
+
+      <!-- BOUTON MENU GAUCHE -->
+      <a class="link panel-open" data-panel="left">
+        <i class="icon f7-icons">menu</i>
+      </a>
+
+      <div class="title">AIVO</div>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- HEADER -->
+    <div class="block block-strong" style="text-align:center; padding: 25px 10px;">
+      <h2 style="margin:0;">Bonjour <span id="user-username"></span> 👋</h2>
+      <p style="margin-top:5px; color:#aaa;">Rôle : <span id="user-role"></span></p>
+    </div>
+
+    <!-- NOUVEAUTÉS -->
+    <div class="card">
+      <div class="card-content card-content-padding">
+        <div class="card-header">Dernières nouveautés</div>
+        <p>Nouvelle documentation publiée</p>
+        <a href="/documents/" class="button button-fill">Voir les documents</a>
+      </div>
+    </div>
+
+    <!-- DERNIER DOCUMENT -->
+    <div class="card">
+      <div class="card-content card-content-padding">
+        <div class="card-header">Dernier document consulté</div>
+        <p id="last-doc-text">Aucun document consulté pour le moment.</p>
+        <a id="btn-open-last-doc" class="button button-outline">Ouvrir</a>
+      </div>
+    </div>
+
+    <!-- DERNIÈRE DISCUSSION -->
+    <div class="card">
+      <div class="card-content card-content-padding">
+        <div class="card-header">Dernière discussion</div>
+        <p>Marie : “Tu peux vérifier le rapport ?”</p>
+        <a href="#" class="button button-outline">Ouvrir la messagerie</a>
+      </div>
+    </div>
+
+  </div>
+</div>

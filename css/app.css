@@ -73,6 +73,16 @@ html, body, .page, .page-content, .login-page {
 }
 
 /* ------------------------------------------------------ */
+/*  AIVO — SUPPRESSION DES OMBRES / OVERLAYS F7            */
+/* ------------------------------------------------------ */
+.login-screen,
+.login-screen-content,
+.page-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+/* ------------------------------------------------------ */
 /*  AIVO — LOGIN PAGE PREMIUM                              */
 /* ------------------------------------------------------ */
 .login-page {

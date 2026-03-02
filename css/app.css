@@ -71,6 +71,26 @@ body {
     margin-top: 20px;
 }
 
+/* --- AIVO BACKGROUNDS --- */
+
+/* Mode clair : dégradé violet clair inversé */
+:root {
+    --aivo-bg: linear-gradient(135deg, #E8D9FF 0%, #B388FF 50%, #FFFFFF 100%);
+}
+
+/* Mode sombre : dégradé violet/noir comme ton image */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --aivo-bg: linear-gradient(135deg, #000000 0%, #2A0A4A 50%, #6A1B9A 100%);
+    }
+}
+
+/* Application du fond à la page login */
+.login-page {
+    background: var(--aivo-bg);
+}
+
+
 /* --- AIVO LOGIN PAGE (premium) --- */
 
 .login-page {

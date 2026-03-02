@@ -1,39 +1,18 @@
-<div class="page" data-name="login">
+<div class="page login-page">
+    <div class="page-content login-content">
+        <div class="login-card">
+            <div class="login-title">Connexion</div>
 
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="title">Connexion</div>
-        </div>
-    </div>
-
-    <div class="page-content login-screen-content">
-        <div class="block">
-            <div class="list no-hairlines-md">
-                <ul>
-                    <li class="item-content item-input">
-                        <div class="item-inner">
-                            <div class="item-title item-label">Nom d'utilisateur</div>
-                            <div class="item-input-wrap">
-                                <input type="text" id="login-username" placeholder="admin ou user">
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="item-content item-input">
-                        <div class="item-inner">
-                            <div class="item-title item-label">Mot de passe</div>
-                            <div class="item-input-wrap">
-                                <input type="password" id="login-password" placeholder="******">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+            <div class="login-input">
+                <input type="text" id="login-username" placeholder="Nom d'utilisateur">
             </div>
 
-            <div class="block">
-                <a id="login-button" class="button button-fill button-large color-blue">Se connecter</a>
+            <div class="login-input">
+                <input type="password" id="login-password" placeholder="Mot de passe">
+                <div class="login-error" id="login-error"></div>
             </div>
+
+            <button class="login-btn" id="login-btn">SE CONNECTER</button>
         </div>
     </div>
-
 </div>

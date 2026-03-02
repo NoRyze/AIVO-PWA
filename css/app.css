@@ -75,19 +75,20 @@ body {
 
 /* Mode clair : dégradé violet clair inversé */
 :root {
-    --aivo-bg: linear-gradient(135deg, #E8D9FF 0%, #B388FF 50%, #FFFFFF 100%);
+    --aivo-bg: linear-gradient(135deg, #C7A4FF 0%, #8E5DFF 50%, #3A0CA3 100%);
 }
 
 /* Mode sombre : dégradé violet/noir comme ton image */
 @media (prefers-color-scheme: dark) {
     :root {
-        --aivo-bg: linear-gradient(135deg, #000000 0%, #2A0A4A 50%, #6A1B9A 100%);
+        --aivo-bg: linear-gradient(135deg, #000000 0%, #1A0033 50%, #5A0FC8 100%);
     }
 }
 
 /* Application du fond à la page login */
 .login-page {
-    background: var(--aivo-bg);
+    background: var(--aivo-bg) !important;
+    background-attachment: fixed;
 }
 
 

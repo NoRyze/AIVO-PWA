@@ -67,7 +67,7 @@ else {
 // GESTION DU BOUTON DE CONNEXION
 // -------------------------------------------------------------
 document.addEventListener('click', async function (e) {
-    if (e.target && e.target.id === 'login-button') {
+    if (e.target && e.target.id === 'login-btn') {
 
         const username = document.getElementById('login-username').value;
         const password = document.getElementById('login-password').value;

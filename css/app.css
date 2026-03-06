@@ -367,3 +367,8 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
+
+.panel .page{
+    opacity:1 !important;
+    transform: none !important;
+}

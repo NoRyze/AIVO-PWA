@@ -168,3 +168,47 @@ html, body, .page, .page-content {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.documents-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.doc-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.category-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    text-align: left;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.subdoc-item {
+    margin: 6px 0;
+}
+
+.subdoc-item a {
+    color: #8ab4ff;
+    text-decoration: none;
+}

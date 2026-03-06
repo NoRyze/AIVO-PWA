@@ -1,48 +1,92 @@
 import { apiFetch } from "./api.js";
 import { getRole } from "./auth.js";
 
+const BACKEND_BASE = "https://aivo-backend-jmyf.onrender.com";
+
 export async function loadDocumentsPage(page) {
     const role = getRole();
-
-    // Framework7 fournit la page dans page.detail.el
     const pageEl = page.detail.el;
+    const container = pageEl.querySelector("#categories-list");
 
-    const addBtn = pageEl.querySelector("#btn-upload");
-    const list = pageEl.querySelector("#documents-list");
+    // Charger les catégories
+    const categories = await apiFetch("/categories", { method: "GET" });
 
-    // Masquer upload si user
-    if (role !== "admin" && addBtn) {
-        addBtn.style.display = "none";
-    }
+    container.innerHTML = "";
 
-    // Charger documents
-    const docs = await apiFetch("/documents/list", { method: "GET" });
+    categories.forEach(cat => {
+        const card = document.createElement("div");
+        card.className = "category-card";
 
-    list.innerHTML = "";
-
-    docs.forEach(doc => {
-        list.innerHTML += `
-            <li>
-                <div class="item-content">
-                    <div class="item-inner">
-                        <div class="item-title">${doc.fileName}</div>
-                        <div class="item-after">
-                            <a href="https://aivo-backend-jmyf.onrender.com/documents/download/${doc.id}" target="_blank">Télécharger</a>
-                            ${role === "admin" ? `<button class="delete-doc" data-id="${doc.id}">Supprimer</button>` : ""}
-                        </div>
-                    </div>
-                </div>
-            </li>
+        card.innerHTML = `
+            <div class="category-header">
+                <div class="category-title">${cat.name}</div>
+                ${role === "admin" ? `
+                    <button class="btn-add-subdoc" data-id="${cat.id}">Ajouter</button>
+                ` : ""}
+            </div>
+            <div class="subdocs"></div>
         `;
+
+        container.appendChild(card);
+
+        const subdocsContainer = card.querySelector(".subdocs");
+
+        (cat.subDocuments || cat.subdocs || []).forEach(sub => {
+            const div = document.createElement("div");
+            div.className = "subdoc-item";
+
+            const hasFile = !!sub.filePath;
+
+            div.innerHTML = `
+                <span>${sub.label}</span>
+                ${hasFile ? `
+                    <a href="${BACKEND_BASE}/subdocs/${sub.id}/download" target="_blank">Télécharger</a>
+                ` : role === "admin" ? `
+                    <input type="file" class="upload-file" data-id="${sub.id}" />
+                ` : `
+                    <span style="opacity:0.6;">(non disponible)</span>
+                `}
+            `;
+
+            subdocsContainer.appendChild(div);
+        });
     });
 
-    // Suppression admin
+    // ADMIN : upload fichier
     if (role === "admin") {
-        pageEl.querySelectorAll(".delete-doc").forEach(btn => {
+        container.querySelectorAll(".upload-file").forEach(input => {
+            input.addEventListener("change", async () => {
+                const id = input.dataset.id;
+                const file = input.files[0];
+                if (!file) return;
+
+                const formData = new FormData();
+                formData.append("file", file);
+
+                await fetch(`${BACKEND_BASE}/subdocs/${id}/upload`, {
+                    method: "POST",
+                    body: formData,
+                    credentials: "include"
+                });
+
+                loadDocumentsPage(page);
+            });
+        });
+
+        // ADMIN : ajouter un sous-document
+        container.querySelectorAll(".btn-add-subdoc").forEach(btn => {
             btn.addEventListener("click", async () => {
-                const id = btn.dataset.id;
-                await apiFetch(`/documents/delete/${id}`, { method: "DELETE" });
-                loadDocumentsPage(page); // refresh
+                const catId = btn.dataset.id;
+                const label = prompt("Nom du sous-document :");
+                if (!label) return;
+
+                await apiFetch(`/categories/${catId}/subdocs`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ label })
+                });
+
+                loadDocumentsPage(page);
             });
         });
     }

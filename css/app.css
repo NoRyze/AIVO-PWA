@@ -1,7 +1,13 @@
 /* ------------------------------------------------------ */
-/*  MODE CLAIR (iOS Light)                                */
+/*  AIVO — THEMES JOUR / NUIT (FORCÉS PAR L’APP)          */
 /* ------------------------------------------------------ */
-:root {
+
+/* Mode clair forcé */
+html.theme-light {
+    color-scheme: light;
+}
+
+html.theme-light :root {
     --f7-theme-color: #007aff;
     --f7-navbar-bg-color: #ffffff;
     --f7-page-bg-color: #ffffff;
@@ -13,21 +19,21 @@
     --aivo-bg: linear-gradient(135deg, #B388FF 0%, #7C4DFF 50%, #4A148C 100%);
 }
 
-/* ------------------------------------------------------ */
-/*  MODE SOMBRE (iOS Dark)                                */
-/* ------------------------------------------------------ */
-@media (prefers-color-scheme: dark){
-    :root {
-        --f7-theme-color: #0a84ff;
-        --f7-navbar-bg-color: #1c1c1e;
-        --f7-page-bg-color: #000000;
-        --f7-text-color: #ffffff;
-        --f7-card-bg-color: #1c1c1e;
-        --f7-card-border-color: #3a3a3c;
+/* Mode sombre forcé */
+html.theme-dark {
+    color-scheme: dark;
+}
 
-        /* AIVO dégradé sombre */
-        --aivo-bg: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
-    }
+html.theme-dark :root {
+    --f7-theme-color: #0a84ff;
+    --f7-navbar-bg-color: #1c1c1e;
+    --f7-page-bg-color: #000000;
+    --f7-text-color: #ffffff;
+    --f7-card-bg-color: #1c1c1e;
+    --f7-card-border-color: #3a3a3c;
+
+    /* AIVO dégradé sombre */
+    --aivo-bg: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
 }
 
 /* ------------------------------------------------------ */
@@ -319,17 +325,6 @@ body {
     margin-bottom: 12px;
 }
 
-.panel-username {
-    font-size: 16px;
-    margin-bottom: 12px;
-}
-
-.panel-btn {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
 .panel-links {
     list-style: none;
     padding: 0;
@@ -351,10 +346,6 @@ body {
 
 .panel-link:active {
     opacity: 0.6;
-}
-
-.view-main .page {
-    animation-duration: 300ms;
 }
 
 /* ------------------------------------------------------ */

@@ -9,7 +9,7 @@
     --f7-card-bg-color: #ffffff;
     --f7-card-border-color: #e5e5ea;
 
-    /* AIVO dégradé clair (plus sombre, violet profond) */
+    /* AIVO dégradé clair */
     --aivo-bg: linear-gradient(135deg, #B388FF 0%, #7C4DFF 50%, #4A148C 100%);
 }
 
@@ -25,36 +25,40 @@
         --f7-card-bg-color: #1c1c1e;
         --f7-card-border-color: #3a3a3c;
 
-        /* AIVO dégradé sombre (noir → violet foncé) */
+        /* AIVO dégradé sombre */
         --aivo-bg: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
     }
 }
 
 /* ------------------------------------------------------ */
-/*  FIX COMPLET SAFARI / iOS — FOND PLEIN ÉCRAN            */
+/*  AIVO — FULLSCREEN iOS (iPhone 13 → 16 Pro Max)         */
 /* ------------------------------------------------------ */
-html, body {
+html {
+    height: 100%;
+    background: var(--aivo-bg) !important;
+    background-attachment: fixed;
+}
+
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: var(--aivo-bg) !important;
-    background-color: transparent !important;
+    background: transparent !important;
 }
 
 .page, .page-content {
     min-height: 100vh;
     background: var(--aivo-bg) !important;
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
+
+    padding-top: calc(env(safe-area-inset-top) + 0px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 /* ------------------------------------------------------ */
 /*  STYLES GENERAUX                                        */
 /* ------------------------------------------------------ */
-body {
-    background: transparent !important; /* IMPORTANT pour supprimer la bande blanche */
-}
-
 .login-screen-content {
     margin-top: 40px;
 }
@@ -177,6 +181,9 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ------------------------------------------------------ */
+/*  DOCUMENTS                                              */
+/* ------------------------------------------------------ */
 .documents-container {
     max-width: 700px;
     margin: 0 auto;
@@ -222,11 +229,11 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU 100% TRANSPARENT + PLUS GRAND       */
+/*  AIVO — BOUTON MENU 100% TRANSPARENT + GRAND            */
 /* ------------------------------------------------------ */
 .aivo-menu-btn {
     background: transparent !important;
-    padding: 10px; /* zone cliquable plus confortable */
+    padding: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -234,6 +241,6 @@ body {
 }
 
 .aivo-menu-btn i {
-    font-size: 40px; /* hamburger plus grand */
+    font-size: 40px;
     color: white !important;
 }

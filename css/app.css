@@ -14,6 +14,27 @@ body {
     background: transparent !important;
 }
 
+/* ------------------------------------------------------ */
+/*  FIX FRAMEWORK7 — Empêche l'empilement des pages        */
+/* ------------------------------------------------------ */
+.view-main {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------------------------------------ */
+/*  PAGES                                                  */
+/* ------------------------------------------------------ */
 .page, .page-content {
     min-height: 100vh;
     background: transparent !important;

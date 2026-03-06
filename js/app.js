@@ -19,7 +19,6 @@ var app = new Framework7({
     view: {
         animate: true, 
         iosSwipeBack: true,
-        pushState: false,
         browserHistoryAnimate: true
     },
 
@@ -48,6 +47,11 @@ var app = new Framework7({
             path: '/documents/',
             url: './pages/documents.html',
             on: { pageInit: loadDocumentsPage }
+        },
+
+        {
+            path: '/settings/',
+            url: './pages/settings.html'
         }
     ]
 });
@@ -93,5 +97,32 @@ document.addEventListener('click', async function (e) {
         } catch (err) {
             app.dialog.alert("Identifiants incorrects");
         }
+    }
+});
+
+document.addEventListener('click', function(e) {
+
+    if (e.target.id === 'btn-change-email') {
+        app.dialog.prompt("Nouvel e-mail :", function(newEmail) {
+            console.log("Email modifié :", newEmail);
+        });
+    }
+
+    if (e.target.id === 'btn-change-password') {
+        app.dialog.prompt("Nouveau mot de passe :", function(newPass) {
+            console.log("Mot de passe modifié :", newPass);
+        });
+    }
+
+    if (e.target.id === 'btn-support') {
+        app.dialog.prompt("Message à l’administrateur :", function(msg) {
+            console.log("Message envoyé :", msg);
+        });
+    }
+
+    if (e.target.id === 'btn-delete-account') {
+        app.dialog.confirm("Supprimer votre compte ?", function() {
+            console.log("Compte supprimé");
+        });
     }
 });

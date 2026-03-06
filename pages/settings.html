@@ -1,0 +1,54 @@
+<div class="page" data-name="settings">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="link back">
+        <i class="icon f7-icons">chevron_left</i>
+      </a>
+      <div class="title">Paramètres</div>
+    </div>
+  </div>
+
+  <div class="page-content settings-container">
+
+    <h2 class="settings-title">Paramètres du compte</h2>
+
+    <!-- Modifier email -->
+    <div class="settings-card">
+      <div class="settings-card-title">Adresse e-mail</div>
+      <p id="settings-email">email@exemple.com</p>
+      <a class="button button-outline settings-btn" id="btn-change-email">Modifier l’e-mail</a>
+    </div>
+
+    <!-- Modifier mot de passe -->
+    <div class="settings-card">
+      <div class="settings-card-title">Mot de passe</div>
+      <p>Changer votre mot de passe</p>
+      <a class="button button-outline settings-btn" id="btn-change-password">Modifier le mot de passe</a>
+    </div>
+
+    <!-- Mode jour/nuit -->
+    <div class="settings-card">
+      <div class="settings-card-title">Apparence</div>
+      <label class="toggle toggle-init">
+        <input type="checkbox" id="toggle-theme">
+        <span class="toggle-icon"></span>
+      </label>
+      <p>Activer le mode sombre</p>
+    </div>
+
+    <!-- Assistance -->
+    <div class="settings-card">
+      <div class="settings-card-title">Assistance</div>
+      <p>Envoyer un message à l’administrateur</p>
+      <a class="button button-outline settings-btn" id="btn-support">Contacter l’assistance</a>
+    </div>
+
+    <!-- Suppression du compte -->
+    <div class="settings-card danger">
+      <div class="settings-card-title">Suppression du compte</div>
+      <p>Cette action est irréversible</p>
+      <a class="button button-fill settings-btn-danger" id="btn-delete-account">Supprimer mon compte</a>
+    </div>
+
+  </div>
+</div>

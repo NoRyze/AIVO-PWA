@@ -353,6 +353,57 @@ body {
     opacity: 0.6;
 }
 
-. view-main .page {
+.view-main .page {
     animation-duration: 300ms;
+}
+
+/* ------------------------------------------------------ */
+/*  AIVO — PAGE PARAMÈTRES PREMIUM                         */
+/* ------------------------------------------------------ */
+
+.settings-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: #fff;
+}
+
+.settings-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.settings-card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.settings-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.settings-btn {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 12px;
+}
+
+.settings-card.danger {
+    border: 1px solid rgba(255,0,0,0.3);
+}
+
+.settings-btn-danger {
+    width: 100%;
+    background: #E53935;
+    color: #fff;
+    border-radius: 12px;
 }

@@ -31,10 +31,28 @@
 }
 
 /* ------------------------------------------------------ */
+/*  FIX COMPLET SAFARI / iOS — FOND PLEIN ÉCRAN            */
+/* ------------------------------------------------------ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--aivo-bg) !important;
+    background-color: transparent !important;
+}
+
+.page, .page-content {
+    min-height: 100vh;
+    background: var(--aivo-bg) !important;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ------------------------------------------------------ */
 /*  STYLES GENERAUX                                        */
 /* ------------------------------------------------------ */
 body {
-    background: var(--f7-page-bg-color);
+    background: transparent !important; /* IMPORTANT pour supprimer la bande blanche */
 }
 
 .login-screen-content {
@@ -61,30 +79,6 @@ body {
     border-radius: 12px;
     padding: 16px;
     margin: 16px;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — FIX SAFARI (safe areas iOS)                     */
-/* ------------------------------------------------------ */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.page {
-    min-height: 100vh;
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — FORCER LE FOND (corrige iOS + Framework7)       */
-/* ------------------------------------------------------ */
-html, body, .page, .page-content {
-    background: var(--aivo-bg) !important;
-    background-color: transparent !important;
-    background-attachment: fixed;
 }
 
 /* ------------------------------------------------------ */
@@ -117,16 +111,15 @@ html, body, .page, .page-content {
 .login-card {
     width: 90%;
     max-width: 360px;
-    background: rgba(255, 255, 255, 0.15); /* transparence */
-    backdrop-filter: blur(12px); /* effet verre */
-    -webkit-backdrop-filter: blur(12px); /* iOS */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 32px;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.25); /* contour verre */
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     animation: fadeIn 0.3s ease;
 }
-
 
 .login-title {
     text-align: center;
@@ -229,11 +222,11 @@ html, body, .page, .page-content {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU 100% TRANSPARENT                    */
+/*  AIVO — BOUTON MENU 100% TRANSPARENT + PLUS GRAND       */
 /* ------------------------------------------------------ */
 .aivo-menu-btn {
     background: transparent !important;
-    padding: 6px;
+    padding: 10px; /* zone cliquable plus confortable */
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -241,6 +234,6 @@ html, body, .page, .page-content {
 }
 
 .aivo-menu-btn i {
-    font-size: 40px;
+    font-size: 40px; /* hamburger plus grand */
     color: white !important;
 }

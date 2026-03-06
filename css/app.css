@@ -82,8 +82,7 @@ body {
 /*  AIVO — SUPPRESSION DES OMBRES / OVERLAYS F7            */
 /* ------------------------------------------------------ */
 .login-screen,
-.login-screen-content,
-.page-content {
+.login-screen-content {
     background: transparent !important;
     backdrop-filter: none !important;
 }

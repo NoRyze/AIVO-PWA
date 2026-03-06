@@ -64,6 +64,21 @@ body {
 }
 
 /* ------------------------------------------------------ */
+/*  AIVO — FIX SAFARI (safe areas iOS)                     */
+/* ------------------------------------------------------ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    min-height: 100vh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ------------------------------------------------------ */
 /*  AIVO — FORCER LE FOND (corrige iOS + Framework7)       */
 /* ------------------------------------------------------ */
 html, body, .page, .page-content {
@@ -211,4 +226,21 @@ html, body, .page, .page-content {
 .subdoc-item a {
     color: #8ab4ff;
     text-decoration: none;
+}
+
+/* ------------------------------------------------------ */
+/*  AIVO — BOUTON MENU PREMIUM                             */
+/* ------------------------------------------------------ */
+.navbar .link.panel-open {
+    background: rgba(255,255,255,0.12);
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navbar .link.panel-open i {
+    font-size: 20px;
+    color: white;
 }

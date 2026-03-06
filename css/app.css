@@ -292,3 +292,63 @@ body {
     margin-top: 12px;
     border-radius: 12px;
 }
+
+/* ------------------------------------------------------ */
+/*  AIVO — PANEL GAUCHE PREMIUM                            */
+/* ------------------------------------------------------ */
+
+.panel-container {
+    padding: 30px 20px;
+    color: #fff;
+}
+
+.panel-card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: fadeIn 0.4s ease;
+}
+
+.panel-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.panel-username {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.panel-btn {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.panel-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel-link {
+    display: block;
+    padding: 12px 0;
+    font-size: 17px;
+    color: #8ab4ff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.panel-link:last-child {
+    border-bottom: none;
+}
+
+.panel-link:active {
+    opacity: 0.6;
+}

@@ -13,8 +13,14 @@ import { loadHomeUserPage } from "./home-user.js";
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
-    name: 'Mon App',
+    name: 'AIVO',
     theme: 'ios',
+
+    view: {
+        animate: true, 
+        iosSwipeBack: true,
+        browserHistoryAnimate: true
+    },
 
     routes: [
         { path: '/', url: './pages/login.html' },

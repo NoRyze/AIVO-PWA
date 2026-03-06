@@ -352,23 +352,3 @@ body {
 .panel-link:active {
     opacity: 0.6;
 }
-
-/* ------------------------------------------------------ */
-/*  AIVO — TRANSITION SLIDE PREMIUM ENTRE LES PAGES        */
-/* ------------------------------------------------------ */
-
-.page {
-    opacity: 0;
-    transform: translateX(25px);
-    transition: transform 0.28s ease, opacity 0.28s ease;
-}
-
-.page-current {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.panel .page{
-    opacity:1 !important;
-    transform: none !important;
-}

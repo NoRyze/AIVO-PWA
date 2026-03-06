@@ -19,6 +19,7 @@ var app = new Framework7({
     view: {
         animate: true, 
         iosSwipeBack: true,
+        pushState: false,
         browserHistoryAnimate: true
     },
 

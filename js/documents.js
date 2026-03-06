@@ -1,13 +1,14 @@
 import { apiFetch } from "./api.js";
 import { getRole } from "./auth.js";
 
-export async function loadDocumentsPage() {
+export async function loadDocumentsPage(page) {
     const role = getRole();
-    const list = document.getElementById("documents-list");
-    const addBtn = document.getElementById("add-document-btn");
+
+    const addBtn = page.el.querySelector("btn-upload");
+    const list = page.el.querySelector("#documents-list");
     
     // 1. Masquer le bouton d'ajout si user
-    if (role !== "admin") {
+    if (role !== "admin" && addBtn) {
         addBtn.style.display = "none";
     }
     
@@ -21,9 +22,9 @@ export async function loadDocumentsPage() {
             <li>
                 <div class="item-content">
                     <div class="item-inner">
-                        <div class="item-title">${doc.name}</div>
+                        <div class="item-title">${doc.fileName}</div>
                         <div class="item-after">
-                            <a href="${doc.url}" target="_blank">Télécharger</a>
+                            <a href="${doc.owner}" target="_blank">Télécharger</a>
                             ${role === "admin" ? `<button class="delete-doc" data-id"${doc.id}">Suprimer</button>` : ""}
                         </div>
                     </div>
@@ -34,12 +35,13 @@ export async function loadDocumentsPage() {
 
     // 3. Gestion supression (admin uniquement)
     if (role === "admin") {
-        document.querySelectorAll(".delete-doc").forEach(btn => {
+       page.el.querySelectorAll(".delete-doc").forEach(btn => {
             btn.addEventListener("click", async () => {
                 const id = btn.dataset.id;
                 await apiFetch(`/documents/${id}`, { method: "DELETE" });
-                loadDocumentsPage(); // refresh
+                loadDocumentsPage(page); // refresh
             });
-        });
+       });
+            
     }
 }

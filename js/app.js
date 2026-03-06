@@ -1,6 +1,3 @@
-// -------------------------------------------------------------
-// IMPORTS
-// -------------------------------------------------------------
 import { login } from "./api.js";
 import { saveSession, getRole } from "./auth.js";
 import { loadAdminPage } from "./home-admin.js";
@@ -8,15 +5,6 @@ import { loadLogsPage } from "./logs.js";
 import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
-// -------------------------------------------------------------
-// FIX : retirer les classes de thème résiduelles
-// -------------------------------------------------------------
-document.documentElement.classList.remove('theme-dark');
-document.documentElement.classList.remove('theme-light');
-
-// -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 (iOS THEME)
-// -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
     name: 'AIVO',
@@ -25,8 +13,7 @@ var app = new Framework7({
     view: {
         animate: true,
         iosSwipeBack: true,
-        browserHistoryAnimate: true,
-        stackPages: false   // IMPORTANT : empêche l’effet “sphère”
+        stackPages: false
     },
 
     routes: [
@@ -36,19 +23,7 @@ var app = new Framework7({
         { 
             path: '/home-user/',
             url: './pages/home-user.html',
-            on: { pageInit: loadHomeUserPage } 
-        },
-
-        {
-            path: '/logs/',
-            url: './page/logs.html',
-            on: { pageInit: loadLogsPage }
-        },
-
-        { 
-            path: '/home-admin/', 
-            url: './pages/home-admin.html',
-            on : { pageInit: loadAdminPage }
+            on: { pageInit: loadHomeUserPage }
         },
 
         {
@@ -58,35 +33,33 @@ var app = new Framework7({
         },
 
         {
+            path: '/logs/',
+            url: './pages/logs.html',
+            on: { pageInit: loadLogsPage }
+        },
+
+        {
+            path: '/home-admin/',
+            url: './pages/home-admin.html',
+            on: { pageInit: loadAdminPage }
+        },
+
+        {
             path: '/settings/',
             url: './pages/settings.html'
         }
     ]
 });
 
-// -------------------------------------------------------------
-// VUE PRINCIPALE
-// -------------------------------------------------------------
 var mainView = app.views.create('.view-main');
 
-// -------------------------------------------------------------
-// REDIRECTION AUTOMATIQUE AU DÉMARRAGE
-// -------------------------------------------------------------
+// Redirection auto
 const role = getRole();
+if (role === "admin") app.views.main.router.navigate('/home-admin/');
+else if (role === "user") app.views.main.router.navigate('/home-user/');
+else app.views.main.router.navigate('/login/');
 
-if (role === "admin") {
-    app.views.main.router.navigate('/home-admin/');
-}
-else if (role === "user") {
-    app.views.main.router.navigate('/home-user/');
-}
-else {
-    app.views.main.router.navigate('/login/');
-}
-
-// -------------------------------------------------------------
-// GESTION DU BOUTON DE CONNEXION
-// -------------------------------------------------------------
+// Login
 document.addEventListener('click', async function (e) {
     if (e.target && e.target.id === 'login-btn') {
 
@@ -95,47 +68,13 @@ document.addEventListener('click', async function (e) {
 
         try {
             const data = await login(username, password);
-
             saveSession(data);
 
-            if (data.role === "admin") {
-                app.views.main.router.navigate('/home-admin/');
-            } else {
-                app.views.main.router.navigate('/home-user/');
-            }
+            if (data.role === "admin") app.views.main.router.navigate('/home-admin/');
+            else app.views.main.router.navigate('/home-user/');
 
         } catch (err) {
             app.dialog.alert("Identifiants incorrects");
         }
-    }
-});
-
-// -------------------------------------------------------------
-// PARAMÈTRES : EMAIL / MDP / SUPPORT / SUPPRESSION
-// -------------------------------------------------------------
-document.addEventListener('click', function(e) {
-
-    if (e.target.id === 'btn-change-email') {
-        app.dialog.prompt("Nouvel e-mail :", function(newEmail) {
-            console.log("Email modifié :", newEmail);
-        });
-    }
-
-    if (e.target.id === 'btn-change-password') {
-        app.dialog.prompt("Nouveau mot de passe :", function(newPass) {
-            console.log("Mot de passe modifié :", newPass);
-        });
-    }
-
-    if (e.target.id === 'btn-support') {
-        app.dialog.prompt("Message à l’administrateur :", function(msg) {
-            console.log("Message envoyé :", msg);
-        });
-    }
-
-    if (e.target.id === 'btn-delete-account') {
-        app.dialog.confirm("Supprimer votre compte ?", function() {
-            console.log("Compte supprimé");
-        });
     }
 });

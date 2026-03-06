@@ -1,390 +1,63 @@
-/* ------------------------------------------------------ */
-/*  AIVO — FULLSCREEN iOS (iPhone 13 → 16 Pro Max)         */
-/* ------------------------------------------------------ */
-html {
-    height: 100%;
-    background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
-    background-attachment: fixed;
-}
-
-body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: transparent !important;
 }
 
-/* ------------------------------------------------------ */
-/*  FIX FRAMEWORK7 — Empêche l'empilement des pages        */
-/* ------------------------------------------------------ */
+/* Fond AIVO */
+html {
+    background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
+    background-attachment: fixed;
+}
+
+/* Vue principale */
 .view-main {
     position: relative;
-    overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
+/* Pages */
 .page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    background: transparent;
 }
 
-/* ------------------------------------------------------ */
-/*  PAGES                                                  */
-/* ------------------------------------------------------ */
-/* Empêche la transparence des pages */
-.page {
-    min-height: 100vh;
-    background: transparent !important; /* OK pour laisser voir le fond AIVO */
-}
-
-/* REND CHAQUE PAGE OPAQUE (supprime l'effet de superposition) */
 .page-content {
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
     min-height: 100vh;
-    background: rgba(0,0,0,0.35) !important; /* verre dépoli léger */
-    backdrop-filter: blur(12px);
 }
 
-
-/* ------------------------------------------------------ */
-/*  STYLES GENERAUX                                        */
-/* ------------------------------------------------------ */
-.login-screen-content {
-    margin-top: 40px;
-}
-
-.button-large {
-    border-radius: 12px;
-}
-
-.block-strong {
-    border-radius: 12px;
-    margin: 15px;
-}
-
-.block {
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-.card {
-    background-color: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 12px;
-    padding: 16px;
-    margin: 16px;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — SUPPRESSION DES OMBRES / OVERLAYS F7            */
-/* ------------------------------------------------------ */
-.login-screen,
-.login-screen-content {
-    background: transparent !important;
-    backdrop-filter: none !important;
-}
-.page-content {
-    min-height: 100vh;
-    background: rgba(0,0,0,0.35) !important;
-    backdrop-filter: blur(12px);
-}
-/* ------------------------------------------------------ */
-/*  AIVO — LOGIN PAGE PREMIUM                              */
-/* ------------------------------------------------------ */
-.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.login-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.login-card {
-    width: 90%;
-    max-width: 360px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 32px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    animation: fadeIn 0.3s ease;
-}
-
-.login-title {
-    text-align: center;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    font-family: Inter, sans-serif;
-}
-
-.login-input {
-    margin-bottom: 20px;
-}
-
-.login-input input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #D0D4E4;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    transition: border 0.2s;
-}
-
-.login-input input:focus {
-    border-color: #4A6CF7;
-    outline: none;
-}
-
-.login-btn {
-    width: 100%;
-    height: 48px;
-    background: #4A6CF7;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.login-btn:active {
-    transform: scale(0.97);
-}
-
-.login-error {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #E53935;
-    min-height: 18px;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ------------------------------------------------------ */
-/*  DOCUMENTS                                              */
-/* ------------------------------------------------------ */
-.documents-container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.doc-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-.category-card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    text-align: left;
-}
-
-.category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.category-title {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.subdoc-item {
-    margin: 6px 0;
-}
-
-.subdoc-item a {
-    color: #8ab4ff;
-    text-decoration: none;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU                                     */
-/* ------------------------------------------------------ */
-.aivo-menu-btn {
-    background: transparent !important;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.aivo-menu-btn i {
-    font-size: 40px;
-    color: white !important;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — HOME PAGE PREMIUM                               */
-/* ------------------------------------------------------ */
-
-.home-container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.home-title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.home-role {
-    font-size: 16px;
-    color: #ddd;
-    margin-bottom: 30px;
-}
-
-.home-card {
-    background: rgba(255,255,255,0.08);
-    padding: 22px;
-    margin-bottom: 22px;
-    border-radius: 14px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.15);
-    text-align: left;
-    animation: fadeIn 0.4s ease;
-}
-
-.home-card-title {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.home-btn {
-    width: 100%;
-    margin-top: 12px;
-    border-radius: 12px;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — PANEL GAUCHE PREMIUM                            */
-/* ------------------------------------------------------ */
-
+/* Panel */
 .panel-container {
-    padding: 30px 20px;
-    color: #fff;
+    padding: 20px;
 }
 
 .panel-card {
     background: rgba(255,255,255,0.08);
-    padding: 20px;
-    margin-bottom: 22px;
-    border-radius: 14px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.15);
-    animation: fadeIn 0.4s ease;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
 }
 
 .panel-title {
     font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.panel-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 10px;
+    color: white;
 }
 
 .panel-link {
-    display: block;
-    padding: 12px 0;
-    font-size: 17px;
-    color: #8ab4ff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: white;
 }
 
-.panel-link:last-child {
-    border-bottom: none;
-}
-
-.panel-link:active {
-    opacity: 0.6;
-}
-
-/* ------------------------------------------------------ */
-/*  AIVO — PAGE PARAMÈTRES PREMIUM                         */
-/* ------------------------------------------------------ */
-
-.settings-container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    color: #fff;
-}
-
-.settings-title {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.settings-card {
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    margin-bottom: 22px;
+/* Login */
+.login-card {
+    width: 90%;
+    max-width: 360px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 32px;
     border-radius: 14px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.15);
-}
-
-.settings-card-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.settings-btn {
-    width: 100%;
-    margin-top: 12px;
-    border-radius: 12px;
-}
-
-.settings-card.danger {
-    border: 1px solid rgba(255,0,0,0.3);
-}
-
-.settings-btn-danger {
-    width: 100%;
-    background: #E53935;
-    color: #fff;
-    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
 }

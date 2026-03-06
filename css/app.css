@@ -229,18 +229,18 @@ html, body, .page, .page-content {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU PREMIUM                             */
+/*  AIVO — BOUTON MENU 100% TRANSPARENT                    */
 /* ------------------------------------------------------ */
-.navbar .link.panel-open {
-    background: rgba(255,255,255,0.12);
-    padding: 8px 10px;
+.aivo-menu-btn {
+    background: transparent !important;
+    padding: 6px;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    justify-content: center;
 }
 
-.navbar .link.panel-open i {
-    font-size: 20px;
-    color: white;
+.aivo-menu-btn i {
+    font-size: 24px;
+    color: white !important;
 }

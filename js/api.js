@@ -1,5 +1,5 @@
 // -------------------------------------------------------------
-// API.JS — Version adaptée à TON backend actuel
+// API.JS — Version corrigée et robuste
 // -------------------------------------------------------------
 
 import {
@@ -39,7 +39,7 @@ export async function apiFetch(endpoint, options = {}) {
     // 3. Appel API
     let response = await fetch(API_URL + endpoint, options);
 
-    // 4. Si 401 → refresh
+    // 4. Si 401 → refresh + rejouer la requête
     if (response.status === 401) {
         const ok = await refreshSession();
         if (!ok) {
@@ -48,13 +48,21 @@ export async function apiFetch(endpoint, options = {}) {
             return;
         }
 
-        // Rejouer la requête
+        // Rejouer la requête avec le nouveau token
         const newToken = getToken();
         options.headers["Authorization"] = `Bearer ${newToken}`;
         response = await fetch(API_URL + endpoint, options);
     }
 
-    return response.json();
+    // 5. Empêcher le crash si la réponse n'est pas du JSON
+    const text = await response.text();
+
+    try {
+        return JSON.parse(text);
+    } catch {
+        console.error("Réponse non JSON :", response.status, text);
+        throw new Error(`Réponse non JSON : HTTP ${response.status}`);
+    }
 }
 
 // -------------------------------------------------------------

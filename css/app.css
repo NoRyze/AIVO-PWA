@@ -244,3 +244,51 @@ body {
     font-size: 40px;
     color: white !important;
 }
+
+/* ------------------------------------------------------ */
+/*  AIVO — HOME PAGE PREMIUM                               */
+/* ------------------------------------------------------ */
+
+.home-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.home-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.home-role {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.home-card {
+    background: rgba(255,255,255,0.08);
+    padding: 22px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    text-align: left;
+    animation: fadeIn 0.4s ease;
+}
+
+.home-card-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.home-btn {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 12px;
+}

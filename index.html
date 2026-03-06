@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="apple-touch-icon" href="img/icon-192.png">
 
-    <!-- Framework7 v8 (LOCAL, plus de blocage Edge) -->
+    <!-- Framework7 v8 -->
     <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css">
 
     <!-- CSS perso -->
@@ -25,6 +25,10 @@
 
         <!-- PANEL GAUCHE -->
         <div class="panel panel-left panel-cover">
+
+            <!-- SUPPRESSION DU TITRE AUTOMATIQUE -->
+            <div class="navbar" style="display:none;"></div>
+
             <div class="view">
                 <div class="page">
                     <div class="page-content">
@@ -49,12 +53,12 @@
             </div>
         </div>
 
-        <!-- VUE PRINCIPALE (Framework7 charge ici les pages via routes.js) -->
+        <!-- VUE PRINCIPALE -->
         <div class="view view-main"></div>
 
     </div>
 
-    <!-- Framework7 JS (LOCAL) -->
+    <!-- Framework7 JS -->
     <script src="lib/framework7/framework7-bundle.min.js"></script>
 
     <!-- JS de ton app -->

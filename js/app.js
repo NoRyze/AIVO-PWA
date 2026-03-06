@@ -9,7 +9,7 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// FIX : retirer les classes de thème qui cassent l'affichage
+// FIX : retirer les classes de thème résiduelles
 // -------------------------------------------------------------
 document.documentElement.classList.remove('theme-dark');
 document.documentElement.classList.remove('theme-light');

@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css">
     <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
 
-
     <!-- CSS perso -->
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -27,35 +26,29 @@
 
         <!-- PANEL GAUCHE -->
         <div class="panel panel-left panel-cover">
-            <div class="navbar" style="display:none;"></div>
+            <div class="panel-container">
 
-            <div class="view">
-                <div class="page">
-                    <div class="page-content panel-container">
-
-                        <div class="panel-card">
-                            <div class="panel-title">Compte</div>
-                            <ul class="panel-links">
-                                <li><a href="/settings/" class="panel-link panel-close">Paramètres</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="panel-card">
-                            <div class="panel-title">Navigation</div>
-                            <ul class="panel-links">
-                                <li><a href="/home-user/" class="panel-link panel-close">Accueil</a></li>
-                                <li><a href="/documents/" class="panel-link panel-close">Documents</a></li>
-                                <li><a href="/messages/" class="panel-link panel-close">Messages</a></li>
-                                <li><a href="#" id="panel-logout" class="panel-link panel-close">Déconnexion</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
+                <div class="panel-card">
+                    <div class="panel-title">Compte</div>
+                    <ul class="panel-links">
+                        <li><a href="/settings/" class="panel-link panel-close">Paramètres</a></li>
+                    </ul>
                 </div>
+
+                <div class="panel-card">
+                    <div class="panel-title">Navigation</div>
+                    <ul class="panel-links">
+                        <li><a href="/home-user/" class="panel-link panel-close">Accueil</a></li>
+                        <li><a href="/documents/" class="panel-link panel-close">Documents</a></li>
+                        <li><a href="/messages/" class="panel-link panel-close">Messages</a></li>
+                        <li><a href="#" id="panel-logout" class="panel-link panel-close">Déconnexion</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
-        <!-- VUE PRINCIPALE -->
+        <!-- VUE PRINCIPALE (OBLIGATOIRE) -->
         <div class="view view-main"></div>
 
     </div>

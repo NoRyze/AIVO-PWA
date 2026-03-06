@@ -1,5 +1,5 @@
 // -------------------------------------------------------------
-// IMPORTS (toujours en haut du fichier)
+// IMPORTS
 // -------------------------------------------------------------
 import { login } from "./api.js";
 import { saveSession, getRole } from "./auth.js";
@@ -7,6 +7,12 @@ import { loadAdminPage } from "./home-admin.js";
 import { loadLogsPage } from "./logs.js";
 import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
+
+// -------------------------------------------------------------
+// FIX : retirer les classes de thème qui cassent l'affichage
+// -------------------------------------------------------------
+document.documentElement.classList.remove('theme-dark');
+document.documentElement.classList.remove('theme-light');
 
 // -------------------------------------------------------------
 // INITIALISATION FRAMEWORK7 (iOS THEME)
@@ -17,9 +23,10 @@ var app = new Framework7({
     theme: 'ios',
 
     view: {
-        animate: true, 
+        animate: true,
         iosSwipeBack: true,
-        browserHistoryAnimate: true
+        browserHistoryAnimate: true,
+        stackPages: false   // IMPORTANT : empêche l’effet “sphère”
     },
 
     routes: [
@@ -57,11 +64,13 @@ var app = new Framework7({
     ]
 });
 
-// Vue principale
+// -------------------------------------------------------------
+// VUE PRINCIPALE
+// -------------------------------------------------------------
 var mainView = app.views.create('.view-main');
 
 // -------------------------------------------------------------
-// REDIRECTION AUTOMATIQUE AU DÉMARRAGE (si session existante)
+// REDIRECTION AUTOMATIQUE AU DÉMARRAGE
 // -------------------------------------------------------------
 const role = getRole();
 

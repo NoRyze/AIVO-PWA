@@ -1,47 +1,9 @@
 /* ------------------------------------------------------ */
-/*  AIVO — THEMES JOUR / NUIT (FORCÉS PAR L’APP)          */
-/* ------------------------------------------------------ */
-
-/* Mode clair forcé */
-html.theme-light {
-    color-scheme: light;
-}
-
-html.theme-light :root {
-    --f7-theme-color: #007aff;
-    --f7-navbar-bg-color: #ffffff;
-    --f7-page-bg-color: #ffffff;
-    --f7-text-color: #000000;
-    --f7-card-bg-color: #ffffff;
-    --f7-card-border-color: #e5e5ea;
-
-    /* AIVO dégradé clair */
-    --aivo-bg: linear-gradient(135deg, #B388FF 0%, #7C4DFF 50%, #4A148C 100%);
-}
-
-/* Mode sombre forcé */
-html.theme-dark {
-    color-scheme: dark;
-}
-
-html.theme-dark :root {
-    --f7-theme-color: #0a84ff;
-    --f7-navbar-bg-color: #1c1c1e;
-    --f7-page-bg-color: #000000;
-    --f7-text-color: #ffffff;
-    --f7-card-bg-color: #1c1c1e;
-    --f7-card-border-color: #3a3a3c;
-
-    /* AIVO dégradé sombre */
-    --aivo-bg: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
-}
-
-/* ------------------------------------------------------ */
 /*  AIVO — FULLSCREEN iOS (iPhone 13 → 16 Pro Max)         */
 /* ------------------------------------------------------ */
 html {
     height: 100%;
-    background: var(--aivo-bg) !important;
+    background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
     background-attachment: fixed;
 }
 
@@ -54,7 +16,7 @@ body {
 
 .page, .page-content {
     min-height: 100vh;
-    background: var(--aivo-bg) !important;
+    background: transparent !important;
 
     padding-top: calc(env(safe-area-inset-top) + 0px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
@@ -84,8 +46,8 @@ body {
 }
 
 .card {
-    background-color: var(--f7-card-bg-color);
-    border: 1px solid var(--f7-card-border-color);
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 12px;
     padding: 16px;
     margin: 16px;
@@ -235,7 +197,7 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU 100% TRANSPARENT + GRAND            */
+/*  AIVO — BOUTON MENU                                     */
 /* ------------------------------------------------------ */
 .aivo-menu-btn {
     background: transparent !important;

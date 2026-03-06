@@ -352,3 +352,7 @@ body {
 .panel-link:active {
     opacity: 0.6;
 }
+
+. view-main .page {
+    animation-duration: 300ms;
+}

@@ -24,8 +24,8 @@ body {
 }
 
 .page-content {
-    background: rgba(0,0,0,0.55); /* opaque = plus de page fantôme */
-    backdrop-filter: blur(10px);
+    background: transparent !important; /* ← IMPORTANT */
+    backdrop-filter: none !important;   /* ← IMPORTANT */
     min-height: 100vh;
 
     padding-top: calc(env(safe-area-inset-top) + 0px);

@@ -20,7 +20,8 @@ body {
 /* ------------------------------------------------------ */
 
 .page {
-    background: transparent !important;
+    background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
+    background-attachment: fixed;
 }
 
 /* ------------------------------------------------------ */
@@ -28,16 +29,7 @@ body {
 /* ------------------------------------------------------ */
 
 .page-content {
-    position: relative;
-    overflow: hidden;
-}
-
-.page-content::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.30); /* 30% d’opacité : masque les anciennes pages mais laisse voir AIVO */
-    z-index: 0;
+    background: transparent !important;
 }
 
 /* Tous les éléments de la page passent AU-DESSUS */

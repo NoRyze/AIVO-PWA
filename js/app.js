@@ -22,15 +22,20 @@ var app = new Framework7({
 
     // Empêche Framework7 de garder les pages en mémoire
     stackPages: false,
+    preloadPreviousPage: false,
+    removeElements: true,
+    pushState: false,
 
     view: {
         animate: false,
         iosSwipeBack: false,
-        browserHistoryAnimate: false
+        browserHistoryAnimate: false,
+        removeElements: true
     },
 
     router: {
-        animate: false
+        animate: false,
+        removeElements: true
     },
 
     routes: [
@@ -67,6 +72,7 @@ var app = new Framework7({
         }
     ]
 });
+
 
 
 // -------------------------------------------------------------

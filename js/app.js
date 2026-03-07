@@ -9,7 +9,8 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — PANEL SLIDE + PAGES FADE
+// INITIALISATION FRAMEWORK7 — TRANSITIONS DÉSACTIVÉES
+// (le slide custom est géré par ton CSS)
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
@@ -30,8 +31,8 @@ var app = new Framework7({
         browserHistoryAnimate: true,
         removeElements: true,
 
-        // ⭐ Pages = fade premium (zéro rebond)
-        transition: 'f7-fade'
+        // ⭐ On désactive les transitions F7
+        transition: 'none'
     },
 
     router: {
@@ -75,11 +76,26 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — PAGES FADE (panel reste en slide)
+// VUE PRINCIPALE — TRANSITION DÉSACTIVÉE
+// (le slide custom est appliqué via CSS + hooks ci-dessous)
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,
-    transition: 'f7-fade'
+    transition: 'none'
+});
+
+// -------------------------------------------------------------
+// AIVO — HOOKS POUR LE SLIDE CUSTOM IDENTIQUE AU PANEL
+// -------------------------------------------------------------
+app.on('page:beforein', (page) => {
+    const el = page.el;
+    el.classList.remove('page-leave');
+    el.classList.add('page-current');
+});
+
+app.on('page:beforeout', (page) => {
+    const el = page.el;
+    el.classList.add('page-leave');
 });
 
 // -------------------------------------------------------------

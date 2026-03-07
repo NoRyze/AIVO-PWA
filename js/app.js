@@ -9,8 +9,7 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — TRANSITIONS DÉSACTIVÉES
-// (le slide custom est géré par ton CSS)
+// INITIALISATION FRAMEWORK7 — SLIDE CUSTOM
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
@@ -20,16 +19,16 @@ var app = new Framework7({
     animate: true,
     iosTranslucentBars: false,
 
-    stackPages: false,
-    preloadPreviousPage: false,
-    removeElements: true,
+    // ⭐ IMPORTANT : on garde les pages dans le DOM
+    stackPages: true,
+    preloadPreviousPage: true,
+    removeElements: false,
     pushState: false,
 
     view: {
         animate: true,
         iosSwipeBack: false,
         browserHistoryAnimate: true,
-        removeElements: true,
 
         // ⭐ On désactive les transitions F7
         transition: 'none'
@@ -37,7 +36,7 @@ var app = new Framework7({
 
     router: {
         animate: true,
-        removeElements: true
+        removeElements: false
     },
 
     routes: [
@@ -76,8 +75,7 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — TRANSITION DÉSACTIVÉE
-// (le slide custom est appliqué via CSS + hooks ci-dessous)
+// VUE PRINCIPALE — TRANSITION DÉSACTIVÉE (slide custom via CSS)
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,

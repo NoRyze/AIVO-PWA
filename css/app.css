@@ -22,7 +22,7 @@ body {
 .page {
     background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
     background-attachment: fixed;
-    transition: transform 0.25s ease; /* Préparation slide premium */
+    transition: transform 0.25s ease;
 }
 
 .page-content {
@@ -39,13 +39,17 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*  PANEL GAUCHE — TRANSPARENT (fond AIVO visible)         */
+/*  PANEL GAUCHE — TRANSPARENT + DESCENTE                 */
 /* ------------------------------------------------------ */
 
 .panel,
 .panel .page,
 .panel .page-content {
     background: transparent !important;
+}
+
+.panel {
+    padding-top: 60px !important; /* ↓↓↓ Correction du chevauchement */
 }
 
 /* ------------------------------------------------------ */
@@ -86,7 +90,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh; /* ↓↓↓ Correction centrage vertical */
+    padding-top: 20px;
 }
 
 .login-content {
@@ -113,6 +118,16 @@ body {
 
 .login-card,
 .login-card * {
+    color: #ffffff !important;
+}
+
+/* --- Correction 1 : Titre Connexion plus grand + centré --- */
+.login-title {
+    text-align: center;
+    font-size: 32px !important;
+    font-weight: 700;
+    margin-bottom: 28px;
+    margin-top: 0;
     color: #ffffff !important;
 }
 

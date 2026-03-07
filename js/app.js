@@ -9,7 +9,7 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — SLIDE CUSTOM
+// INITIALISATION FRAMEWORK7 — TRANSITION iOS-LIKE
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
@@ -19,7 +19,7 @@ var app = new Framework7({
     animate: true,
     iosTranslucentBars: false,
 
-    // ⭐ IMPORTANT : on garde les pages dans le DOM
+    // ⭐ IMPORTANT : garder les pages en mémoire
     stackPages: true,
     preloadPreviousPage: true,
     removeElements: false,
@@ -30,8 +30,8 @@ var app = new Framework7({
         iosSwipeBack: false,
         browserHistoryAnimate: true,
 
-        // ⭐ Transition minimale pour forcer F7 à générer les classes
-        transition: 'f7-fade'
+        // ⭐ Transition native iOS-like
+        transition: 'ios'
     },
 
     router: {
@@ -75,25 +75,11 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — TRANSITION MINIMALE (slide custom via CSS)
+// VUE PRINCIPALE — iOS-LIKE
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,
-    transition: 'f7-fade'
-});
-
-// -------------------------------------------------------------
-// AIVO — HOOKS POUR LE SLIDE CUSTOM IDENTIQUE AU PANEL
-// -------------------------------------------------------------
-app.on('page:beforein', (page) => {
-    const el = page.el;
-    el.classList.remove('page-leave');
-    el.classList.add('page-current');
-});
-
-app.on('page:beforeout', (page) => {
-    const el = page.el;
-    el.classList.add('page-leave');
+    transition: 'ios'
 });
 
 // -------------------------------------------------------------

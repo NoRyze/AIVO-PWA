@@ -8,14 +8,6 @@ html.theme-light {
 }
 
 html.theme-light :root {
-    --f7-theme-color: #007aff;
-    --f7-navbar-bg-color: #ffffff;
-    --f7-page-bg-color: #ffffff;
-    --f7-text-color: #000000;
-    --f7-card-bg-color: #ffffff;
-    --f7-card-border-color: #e5e5ea;
-
-    /* AIVO dégradé clair */
     --aivo-bg: linear-gradient(135deg, #B388FF 0%, #7C4DFF 50%, #4A148C 100%);
 }
 
@@ -25,14 +17,6 @@ html.theme-dark {
 }
 
 html.theme-dark :root {
-    --f7-theme-color: #0a84ff;
-    --f7-navbar-bg-color: #1c1c1e;
-    --f7-page-bg-color: #000000;
-    --f7-text-color: #ffffff;
-    --f7-card-bg-color: #1c1c1e;
-    --f7-card-border-color: #3a3a3c;
-
-    /* AIVO dégradé sombre */
     --aivo-bg: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%);
 }
 
@@ -59,8 +43,8 @@ body {
 }
 
 .page-content {
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.55); /* plus opaque = plus de page fantôme */
+    backdrop-filter: blur(10px);
     min-height: 100vh;
 
     padding-top: calc(env(safe-area-inset-top) + 0px);

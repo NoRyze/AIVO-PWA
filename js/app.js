@@ -9,17 +9,25 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7
+// INITIALISATION FRAMEWORK7 (ZÉRO TRANSITION / ZÉRO SLIDE)
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
     name: 'AIVO',
     theme: 'ios',
 
+    // Désactive TOUTES les animations globales
+    animate: false,
+    iosTranslucentBars: false,
+
     view: {
-        animate: true,
-        iosSwipeBack: true,
-        browserHistoryAnimate: true
+        animate: false,              // pas d'animation de vue
+        iosSwipeBack: false,         // pas de swipe-back iOS
+        browserHistoryAnimate: false // pas d'animation historique
+    },
+
+    router: {
+        animate: false               // pas d'animation de navigation
     },
 
     routes: [

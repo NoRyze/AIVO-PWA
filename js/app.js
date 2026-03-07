@@ -16,18 +16,21 @@ var app = new Framework7({
     name: 'AIVO',
     theme: 'ios',
 
-    // Désactive TOUTES les animations globales
+    // Désactive toutes les animations
     animate: false,
     iosTranslucentBars: false,
 
+    // Empêche Framework7 de garder les pages en mémoire
+    stackPages: false,
+
     view: {
-        animate: false,              // pas d'animation de vue
-        iosSwipeBack: false,         // pas de swipe-back iOS
-        browserHistoryAnimate: false // pas d'animation historique
+        animate: false,
+        iosSwipeBack: false,
+        browserHistoryAnimate: false
     },
 
     router: {
-        animate: false               // pas d'animation de navigation
+        animate: false
     },
 
     routes: [
@@ -64,6 +67,7 @@ var app = new Framework7({
         }
     ]
 });
+
 
 // -------------------------------------------------------------
 // VUE PRINCIPALE

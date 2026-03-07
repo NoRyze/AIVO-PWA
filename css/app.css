@@ -37,8 +37,9 @@ html.theme-dark :root {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — FULLSCREEN iOS (iPhone 13 → 16 Pro Max)         */
+/*  AIVO — FULLSCREEN iOS                                 */
 /* ------------------------------------------------------ */
+
 html {
     height: 100%;
     background: var(--aivo-bg) !important;
@@ -52,9 +53,15 @@ body {
     background: transparent !important;
 }
 
-.page, .page-content {
+/* Pages Framework7 */
+.page {
+    background: transparent !important;
+}
+
+.page-content {
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
     min-height: 100vh;
-    background: var(--aivo-bg) !important;
 
     padding-top: calc(env(safe-area-inset-top) + 0px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
@@ -65,6 +72,7 @@ body {
 /* ------------------------------------------------------ */
 /*  STYLES GENERAUX                                        */
 /* ------------------------------------------------------ */
+
 .login-screen-content {
     margin-top: 40px;
 }
@@ -94,9 +102,9 @@ body {
 /* ------------------------------------------------------ */
 /*  AIVO — SUPPRESSION DES OMBRES / OVERLAYS F7            */
 /* ------------------------------------------------------ */
+
 .login-screen,
-.login-screen-content,
-.page-content {
+.login-screen-content {
     background: transparent !important;
     backdrop-filter: none !important;
 }
@@ -104,6 +112,7 @@ body {
 /* ------------------------------------------------------ */
 /*  AIVO — LOGIN PAGE PREMIUM                              */
 /* ------------------------------------------------------ */
+
 .login-page {
     display: flex;
     justify-content: center;
@@ -190,6 +199,7 @@ body {
 /* ------------------------------------------------------ */
 /*  DOCUMENTS                                              */
 /* ------------------------------------------------------ */
+
 .documents-container {
     max-width: 700px;
     margin: 0 auto;
@@ -235,8 +245,9 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*  AIVO — BOUTON MENU 100% TRANSPARENT + GRAND            */
+/*  AIVO — BOUTON MENU                                     */
 /* ------------------------------------------------------ */
+
 .aivo-menu-btn {
     background: transparent !important;
     padding: 10px;

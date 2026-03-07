@@ -9,7 +9,7 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — SLIDE PREMIUM SANS REBOND
+// INITIALISATION FRAMEWORK7 — PANEL SLIDE + PAGES FADE
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
@@ -29,7 +29,9 @@ var app = new Framework7({
         iosSwipeBack: false,
         browserHistoryAnimate: true,
         removeElements: true,
-        transition: 'f7-dive'   // ⭐ Transition ultra stable, zéro rebond
+
+        // ⭐ Pages = fade premium (zéro rebond)
+        transition: 'f7-fade'
     },
 
     router: {
@@ -73,11 +75,11 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — TRANSITION SANS REBOND
+// VUE PRINCIPALE — PAGES FADE (panel reste en slide)
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,
-    transition: 'f7-dive'   // ⭐ Même transition ici
+    transition: 'f7-fade'
 });
 
 // -------------------------------------------------------------

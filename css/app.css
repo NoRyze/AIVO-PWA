@@ -91,8 +91,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
-    /* ⭐ Correction iPhone : centrage parfait */
     padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
 }
 
@@ -116,14 +114,11 @@ body {
     animation: fadeIn 0.3s ease;
 }
 
-/* --- FIX LOGIN : texte blanc, placeholders blancs --- */
-
 .login-card,
 .login-card * {
     color: #ffffff !important;
 }
 
-/* --- Correction : Titre Connexion plus grand + centré --- */
 .login-title {
     text-align: center;
     font-size: 32px !important;
@@ -133,8 +128,6 @@ body {
     color: #ffffff !important;
 }
 
-/* ⭐ Correction iPhone : font-size 17px pour empêcher le zoom */
-/* ⭐ Correction espacement : margin-bottom 22px */
 .login-input input {
     width: 100%;
     padding: 14px;
@@ -391,4 +384,22 @@ body {
     background: #E53935;
     color: #fff;
     border-radius: 12px;
+}
+
+/* ------------------------------------------------------ */
+/*  AIVO — SLIDE CUSTOM IDENTIQUE AU PANEL                */
+/* ------------------------------------------------------ */
+
+.page {
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.page.page-current {
+    transform: translateX(0);
+}
+
+.page.page-leave {
+    transform: translateX(-20%);
+    opacity: 0;
 }

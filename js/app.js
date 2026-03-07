@@ -34,7 +34,7 @@ var app = new Framework7({
 
         {
             path: '/logs/',
-            url: './page/logs.html',
+            url: './pages/logs.html',
             on: { pageInit: loadLogsPage }
         },
 
@@ -55,76 +55,6 @@ var app = new Framework7({
             url: './pages/settings.html'
         }
     ]
-});
-
-// -------------------------------------------------------------
-// GESTION DU THÈME JOUR / NUIT
-// -------------------------------------------------------------
-
-// Appliquer le thème automatique basé sur l'heure
-function applyAutoTheme() {
-    const hour = new Date().getHours();
-
-    if (hour >= 20 || hour < 7) {
-        // Nuit
-        document.documentElement.classList.add('theme-dark');
-        document.documentElement.classList.remove('theme-light');
-        localStorage.setItem('aivo-theme', 'dark');
-    } else {
-        // Jour
-        document.documentElement.classList.add('theme-light');
-        document.documentElement.classList.remove('theme-dark');
-        localStorage.setItem('aivo-theme', 'light');
-    }
-}
-
-// Charger le thème sauvegardé
-const savedTheme = localStorage.getItem('aivo-theme');
-
-if (savedTheme === 'dark') {
-    document.documentElement.classList.add('theme-dark');
-} 
-else if (savedTheme === 'light') {
-    document.documentElement.classList.add('theme-light');
-} 
-else {
-    // Si aucun thème choisi → mode auto
-    applyAutoTheme();
-}
-
-// -------------------------------------------------------------
-// SYNCHRONISER LE SWITCH DANS LA PAGE PARAMÈTRES
-// -------------------------------------------------------------
-document.addEventListener('page:init', function(e) {
-    if (e.target.dataset.name === 'settings') {
-
-        const toggle = document.getElementById('toggle-theme');
-        const currentTheme = localStorage.getItem('aivo-theme');
-
-        if (currentTheme === 'dark') toggle.checked = true;
-        if (currentTheme === 'light') toggle.checked = false;
-
-        // Si aucun thème → appliquer auto
-        if (!currentTheme) applyAutoTheme();
-    }
-});
-
-// -------------------------------------------------------------
-// SWITCH JOUR / NUIT (action utilisateur)
-// -------------------------------------------------------------
-document.addEventListener('change', function(e) {
-    if (e.target.id === 'toggle-theme') {
-
-        if (e.target.checked) {
-            document.documentElement.classList.add('theme-dark');
-            document.documentElement.classList.remove('theme-light');
-            localStorage.setItem('aivo-theme', 'dark');
-        } else {
-            document.documentElement.classList.add('theme-light');
-            document.documentElement.classList.remove('theme-dark');
-            localStorage.setItem('aivo-theme', 'light');
-        }
-    }
 });
 
 // -------------------------------------------------------------

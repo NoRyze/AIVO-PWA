@@ -20,7 +20,7 @@ var app = new Framework7({
     animate: true,
     iosTranslucentBars: false,
 
-    // On garde ton comportement propre
+    // Comportement propre
     stackPages: false,
     preloadPreviousPage: false,
     removeElements: true,
@@ -31,7 +31,7 @@ var app = new Framework7({
         iosSwipeBack: false,        // Pas de swipe-back iOS (bug visuel)
         browserHistoryAnimate: true,
         removeElements: true,
-        transition: 'f7-push'      // SLIDE HORIZONTAL PREMIUM
+        transition: 'f7-push'       // ⭐ SLIDE HORIZONTAL PREMIUM SANS REBOND
     },
 
     router: {
@@ -75,11 +75,11 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — AVEC SLIDE PREMIUM
+// VUE PRINCIPALE — SLIDE PREMIUM SANS REBOND
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,
-    transition: 'f7-cover'   // Slide horizontal fluide
+    transition: 'f7-push'   // ⭐ Correction : plus de f7-cover → plus de rebond
 });
 
 // -------------------------------------------------------------

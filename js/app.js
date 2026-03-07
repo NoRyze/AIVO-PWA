@@ -30,7 +30,7 @@ var app = new Framework7({
         iosSwipeBack: false,
         browserHistoryAnimate: true,
 
-        // ⭐ On active une transition neutre pour forcer F7 à générer les classes
+        // ⭐ Transition minimale pour forcer F7 à générer les classes
         transition: 'f7-fade'
     },
 
@@ -75,7 +75,7 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — TRANSITION NEUTRE (slide custom via CSS)
+// VUE PRINCIPALE — TRANSITION MINIMALE (slide custom via CSS)
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,

@@ -23,16 +23,29 @@ body {
     background: transparent !important;
 }
 
-.page-content {
-    background: transparent !important; /* ← IMPORTANT */
-    backdrop-filter: none !important;   /* ← IMPORTANT */
-    min-height: 100vh;
+/* ------------------------------------------------------ */
+/*  AIVO — COUCHE PAGE (TEST 1)                           */
+/* ------------------------------------------------------ */
 
-    padding-top: calc(env(safe-area-inset-top) + 0px);
-    padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+.page-content {
+    position: relative;
+    overflow: hidden;
 }
+
+.page-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.30); /* 30% d’opacité : masque les anciennes pages mais laisse voir AIVO */
+    z-index: 0;
+}
+
+/* Tous les éléments de la page passent AU-DESSUS */
+.page-content > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 /* ------------------------------------------------------ */
 /*  STYLES GENERAUX                                        */

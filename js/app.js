@@ -31,7 +31,7 @@ var app = new Framework7({
         iosSwipeBack: false,        // Pas de swipe-back iOS (bug visuel)
         browserHistoryAnimate: true,
         removeElements: true,
-        transition: 'f7-cover'      // SLIDE HORIZONTAL PREMIUM
+        transition: 'f7-push'      // SLIDE HORIZONTAL PREMIUM
     },
 
     router: {

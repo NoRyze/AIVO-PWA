@@ -9,29 +9,27 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — SLIDES PREMIUM ACTIVÉS
+// INITIALISATION FRAMEWORK7 — SLIDE PREMIUM SANS REBOND
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
     name: 'AIVO',
     theme: 'ios',
 
-    // Animations activées
     animate: true,
     iosTranslucentBars: false,
 
-    // Comportement propre
     stackPages: false,
     preloadPreviousPage: false,
     removeElements: true,
     pushState: false,
 
     view: {
-        animate: true,              // Active les transitions
-        iosSwipeBack: false,        // Pas de swipe-back iOS (bug visuel)
+        animate: true,
+        iosSwipeBack: false,
         browserHistoryAnimate: true,
         removeElements: true,
-        transition: 'f7-push'       // ⭐ SLIDE HORIZONTAL PREMIUM SANS REBOND
+        transition: 'f7-dive'   // ⭐ Transition ultra stable, zéro rebond
     },
 
     router: {
@@ -75,11 +73,11 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — SLIDE PREMIUM SANS REBOND
+// VUE PRINCIPALE — TRANSITION SANS REBOND
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
     animate: true,
-    transition: 'f7-push'   // ⭐ Correction : plus de f7-cover → plus de rebond
+    transition: 'f7-dive'   // ⭐ Même transition ici
 });
 
 // -------------------------------------------------------------

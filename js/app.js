@@ -9,33 +9,31 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 — TRANSITION iOS-LIKE
+// INITIALISATION FRAMEWORK7 — MODE STABLE (AUCUNE TRANSITION F7)
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
     name: 'AIVO',
     theme: 'ios',
 
-    animate: true,
+    animate: false,              // ⭐ On coupe toutes les animations internes
     iosTranslucentBars: false,
 
-    // ⭐ IMPORTANT : garder les pages en mémoire
-    stackPages: true,
+    stackPages: true,            // ⭐ On garde les pages dans le DOM
     preloadPreviousPage: true,
     removeElements: false,
     pushState: false,
 
     view: {
-        animate: true,
+        animate: false,          // ⭐ Aucune animation F7
         iosSwipeBack: false,
-        browserHistoryAnimate: true,
-
-        // ⭐ Transition native iOS-like
-        transition: 'ios'
+        browserHistoryAnimate: false,
+        removeElements: false,
+        transition: 'none'       // ⭐ Transition désactivée
     },
 
     router: {
-        animate: true,
+        animate: false,
         removeElements: false
     },
 
@@ -75,11 +73,25 @@ var app = new Framework7({
 });
 
 // -------------------------------------------------------------
-// VUE PRINCIPALE — iOS-LIKE
+// VUE PRINCIPALE — AUCUNE TRANSITION F7
 // -------------------------------------------------------------
 var mainView = app.views.create('.view-main', {
-    animate: true,
-    transition: 'ios'
+    animate: false,
+    transition: 'none'
+});
+
+// -------------------------------------------------------------
+// AIVO — HOOKS POUR LE SLIDE CUSTOM (CSS)
+// -------------------------------------------------------------
+app.on('page:beforein', (page) => {
+    const el = page.el;
+    el.classList.remove('page-leave');
+    el.classList.add('page-current');
+});
+
+app.on('page:beforeout', (page) => {
+    const el = page.el;
+    el.classList.add('page-leave');
 });
 
 // -------------------------------------------------------------

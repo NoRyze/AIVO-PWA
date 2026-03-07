@@ -22,22 +22,31 @@ body {
 .page {
     background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
     background-attachment: fixed;
+    transition: transform 0.25s ease; /* Préparation slide premium */
 }
-
-/* ------------------------------------------------------ */
-/*  AIVO — COUCHE PAGE (TEST 1)                           */
-/* ------------------------------------------------------ */
 
 .page-content {
     background: transparent !important;
 }
 
-/* Tous les éléments de la page passent AU-DESSUS */
-.page-content > * {
-    position: relative;
-    z-index: 1;
+/* ------------------------------------------------------ */
+/*  SUPPRESSION DE LA FLÈCHE BLEUE (BACK LINK)            */
+/* ------------------------------------------------------ */
+
+.navbar .link.back,
+.navbar .back.link {
+    display: none !important;
 }
 
+/* ------------------------------------------------------ */
+/*  PANEL GAUCHE — TRANSPARENT (fond AIVO visible)         */
+/* ------------------------------------------------------ */
+
+.panel,
+.panel .page,
+.panel .page-content {
+    background: transparent !important;
+}
 
 /* ------------------------------------------------------ */
 /*  STYLES GENERAUX                                        */
@@ -100,31 +109,24 @@ body {
     animation: fadeIn 0.3s ease;
 }
 
-.login-title {
-    text-align: center;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    font-family: Inter, sans-serif;
-}
+/* --- FIX LOGIN : texte blanc, placeholders blancs --- */
 
-.login-input {
-    margin-bottom: 20px;
+.login-card,
+.login-card * {
+    color: #ffffff !important;
 }
 
 .login-input input {
     width: 100%;
     padding: 14px;
     border-radius: 12px;
-    border: 1px solid #D0D4E4;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    transition: border 0.2s;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    background: rgba(255,255,255,0.05) !important;
+    color: #ffffff !important;
 }
 
-.login-input input:focus {
-    border-color: #4A6CF7;
-    outline: none;
+.login-input input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
 }
 
 .login-btn {

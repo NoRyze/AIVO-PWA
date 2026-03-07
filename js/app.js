@@ -9,32 +9,33 @@ import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
-// INITIALISATION FRAMEWORK7 (ZÉRO TRANSITION / ZÉRO SLIDE)
+// INITIALISATION FRAMEWORK7 — SLIDES PREMIUM ACTIVÉS
 // -------------------------------------------------------------
 var app = new Framework7({
     el: '#app',
     name: 'AIVO',
     theme: 'ios',
 
-    // Désactive toutes les animations
-    animate: false,
+    // Animations activées
+    animate: true,
     iosTranslucentBars: false,
 
-    // Empêche Framework7 de garder les pages en mémoire
+    // On garde ton comportement propre
     stackPages: false,
     preloadPreviousPage: false,
     removeElements: true,
     pushState: false,
 
     view: {
-        animate: false,
-        iosSwipeBack: false,
-        browserHistoryAnimate: false,
-        removeElements: true
+        animate: true,              // Active les transitions
+        iosSwipeBack: false,        // Pas de swipe-back iOS (bug visuel)
+        browserHistoryAnimate: true,
+        removeElements: true,
+        transition: 'f7-cover'      // SLIDE HORIZONTAL PREMIUM
     },
 
     router: {
-        animate: false,
+        animate: true,
         removeElements: true
     },
 
@@ -73,12 +74,13 @@ var app = new Framework7({
     ]
 });
 
-
-
 // -------------------------------------------------------------
-// VUE PRINCIPALE
+// VUE PRINCIPALE — AVEC SLIDE PREMIUM
 // -------------------------------------------------------------
-var mainView = app.views.create('.view-main');
+var mainView = app.views.create('.view-main', {
+    animate: true,
+    transition: 'f7-cover'   // Slide horizontal fluide
+});
 
 // -------------------------------------------------------------
 // REDIRECTION AUTOMATIQUE AU DÉMARRAGE

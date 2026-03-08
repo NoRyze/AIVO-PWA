@@ -711,7 +711,7 @@ body {
     text-align: center;
 }
 
-/* Les bulles : centrées verticalement, espacement réduit */
+/* Bulles centrées verticalement, espacement réduit de moitié */
 .doc-bubbles {
     flex: 1;
     display: flex;
@@ -720,16 +720,17 @@ body {
     justify-content: space-evenly; /* espace égal */
     align-items: center;
 
-    /* ⭐ Réduction de l’espace total → bulles plus proches */
+    /* ⭐ Réduction de l’espace total → espacement divisé par 2 */
     padding: 0;
-    margin: 0 0 20px 0; /* réduit l’espace global */
+    margin-top: -40px;   /* réduit l’espace haut */
+    margin-bottom: -40px; /* réduit l’espace bas */
 }
 
 /* Bulles : plus hautes, moins larges */
 .doc-bubble {
-    width: 65%;              /* ⭐ moins large */
-    max-width: 240px;        /* ⭐ calibré premium */
-    padding: 22px 0;         /* ⭐ plus hautes */
+    width: 65%;              /* moins large */
+    max-width: 240px;        /* calibré premium */
+    padding: 22px 0;         /* plus hautes */
 
     text-align: center;
     border-radius: 14px;

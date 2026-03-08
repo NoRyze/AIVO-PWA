@@ -148,6 +148,18 @@ document.addEventListener('click', async function (e) {
 // -------------------------------------------------------------
 document.addEventListener('click', function(e) {
 
+    // Mot de passe oublié
+    if (e.target.id === 'forgot-password-link') {
+        aivoPrompt("Entrez votre e-mail :", "exemple@mail.com", function(email) {
+            console.log("Demande de réinitialisation envoyée à :", email);
+
+        // Plus tard tu pourras appeler ton API ici :
+        // await sendResetEmail(email);
+
+            aivoConfirm("Un lien de réinitialisation vous a été envoyé.", function(){});
+        });
+    }
+
    // Modifier email
     if (e.target.id === 'btn-change-email') {
         aivoPrompt("Nouvel e-mail :", "exemple@mail.com", function(newEmail) {

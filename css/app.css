@@ -717,17 +717,17 @@ body {
     display: flex;
     flex-direction: column;
 
-    justify-content: space-evenly; /* ⭐ espace égal haut / entre / bas */
+    justify-content: space-evenly; /* espace égal haut / entre / bas */
     align-items: center;
 
-    padding: 0; /* plus propre */
+    padding: 0;
 }
 
-/* Bulles : un peu plus larges mais moins hautes */
+/* Bulles : plus hautes, moins larges */
 .doc-bubble {
-    width: 88%;              /* ⭐ plus large */
-    max-width: 320px;        /* ⭐ calibré comme ta capture */
-    padding: 12px 0;         /* ⭐ moins haut = plus élégant */
+    width: 70%;              /* ⭐ moins large */
+    max-width: 260px;        /* ⭐ calibré premium */
+    padding: 22px 0;         /* ⭐ plus hautes */
 
     text-align: center;
     border-radius: 14px;

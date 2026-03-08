@@ -19,12 +19,6 @@ body {
 /*  FRAMEWORK7 — PAGES                                    */
 /* ------------------------------------------------------ */
 
-.page {
-    background: linear-gradient(135deg, #000000 0%, #12001F 50%, #4A0FC8 100%) !important;
-    background-attachment: fixed;
-    transition: transform 0.25s ease;
-}
-
 .page-content {
     background: transparent !important;
 }

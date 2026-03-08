@@ -16,20 +16,20 @@ var app = new Framework7({
     name: 'AIVO',
     theme: 'ios',
 
-    animate: false,              // ⭐ On coupe toutes les animations internes
+    animate: false,
     iosTranslucentBars: false,
 
-    stackPages: true,            // ⭐ On garde les pages dans le DOM
+    stackPages: true,
     preloadPreviousPage: true,
     removeElements: false,
     pushState: false,
 
     view: {
-        animate: false,          // ⭐ Aucune animation F7
+        animate: false,
         iosSwipeBack: false,
         browserHistoryAnimate: false,
         removeElements: false,
-        transition: 'none'       // ⭐ Transition désactivée
+        transition: 'none'
     },
 
     router: {
@@ -95,14 +95,6 @@ app.on('page:beforeout', (page) => {
 });
 
 // -------------------------------------------------------------
-// AFFICHAGE DU LIEN ADMIN DANS LE PANEL
-// -------------------------------------------------------------
-if (role === "admin") {
-    const adminLink = document.getElementById('admin-dashboard-link');
-    if (adminLink) adminLink.style.display = 'block';
-}
-
-// -------------------------------------------------------------
 // REDIRECTION AUTOMATIQUE AU DÉMARRAGE
 // -------------------------------------------------------------
 const role = getRole();
@@ -115,6 +107,14 @@ else if (role === "user") {
 }
 else {
     app.views.main.router.navigate('/login/');
+}
+
+// -------------------------------------------------------------
+// AFFICHAGE DU LIEN ADMIN DANS LE PANEL
+// -------------------------------------------------------------
+if (role === "admin") {
+    const adminLink = document.getElementById('admin-dashboard-link');
+    if (adminLink) adminLink.style.display = 'block';
 }
 
 // -------------------------------------------------------------

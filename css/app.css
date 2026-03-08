@@ -711,22 +711,24 @@ body {
     text-align: center;
 }
 
-/* Les bulles : centrées verticalement avec espace régulier */
+/* Les bulles : centrées verticalement, espacement réduit */
 .doc-bubbles {
-    flex: 1; /* occupe tout l’espace restant */
+    flex: 1;
     display: flex;
     flex-direction: column;
 
-    justify-content: space-evenly; /* espace égal haut / entre / bas */
+    justify-content: space-evenly; /* espace égal */
     align-items: center;
 
+    /* ⭐ Réduction de l’espace total → bulles plus proches */
     padding: 0;
+    margin: 0 0 20px 0; /* réduit l’espace global */
 }
 
 /* Bulles : plus hautes, moins larges */
 .doc-bubble {
-    width: 70%;              /* ⭐ moins large */
-    max-width: 260px;        /* ⭐ calibré premium */
+    width: 65%;              /* ⭐ moins large */
+    max-width: 240px;        /* ⭐ calibré premium */
     padding: 22px 0;         /* ⭐ plus hautes */
 
     text-align: center;
@@ -742,7 +744,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* Effet tactile */
 .doc-bubble:active {
     transform: scale(0.97);
 }

@@ -696,26 +696,37 @@ body {
     background: rgba(255,255,255,0.18);
 }
 /* Centrage premium de la page Documents */
+/* Conteneur global : le titre reste en haut */
 .documents-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* centre verticalement */
-    align-items: center;       /* centre horizontalement */
-    height: 100%;              /* occupe toute la page */
-    padding: 0 20px;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Le titre reste en haut naturellement */
+.doc-title {
+    margin-top: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-/* Centrage du titre */
-.doc-title {
-    margin-bottom: 40px;
-}
-
-/* Les bulles restent en grille mais centrées */
+/* Centrage vertical uniquement des bulles */
 .doc-bubbles {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    /* ⭐ Le secret : occupe tout l’espace restant */
+    flex: 1;
+
+    /* ⭐ Centre verticalement dans l’espace restant */
+    justify-content: center;
+
+    /* Centre horizontalement */
+    align-items: center;
+
+    max-width: 350px;
     width: 100%;
-    max-width: 350px; /* limite pour un rendu premium */
+    margin: 0 auto;
 }

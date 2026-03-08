@@ -172,3 +172,48 @@ document.addEventListener('click', function(e) {
         });
     }
 });
+// -------------------------------------------------------------
+// DÉCONNEXION — BULLE AIVO + SUPPRESSION SESSION + RETOUR LOGIN
+// -------------------------------------------------------------
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'panel-logout') {
+
+        aivoConfirm("Voulez-vous vraiment vous déconnecter ?", function () {
+
+            // Supprime la session
+            localStorage.removeItem("aivo-session");
+
+            // Redirige vers la page login
+            app.views.main.router.navigate('/login/');
+
+            // Ferme le panel
+            app.panel.close();
+        });
+    }
+});
+
+function aivoConfirm(message, onConfirm) {
+    const overlay = document.createElement('div');
+    overlay.className = 'aivo-confirm-overlay';
+
+    overlay.innerHTML = `
+        <div class="aivo-confirm-box">
+            <div class="aivo-confirm-message">${message}</div>
+            <div class="aivo-confirm-buttons">
+                <div class="aivo-confirm-btn aivo-confirm-cancel">Annuler</div>
+                <div class="aivo-confirm-btn aivo-confirm-ok">OK</div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.aivo-confirm-cancel').onclick = () => {
+        overlay.remove();
+    };
+
+    overlay.querySelector('.aivo-confirm-ok').onclick = () => {
+        overlay.remove();
+        onConfirm();
+    };
+}

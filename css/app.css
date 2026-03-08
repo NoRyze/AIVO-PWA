@@ -695,3 +695,8 @@ body {
     transform: scale(0.96);
     background: rgba(255,255,255,0.18);
 }
+.doc-title {
+    margin-top: 10px;
+    margin-bottom: 40px; /* ⭐ Augmente l’espace avant la 1ère bulle */
+    text-align: center;
+}

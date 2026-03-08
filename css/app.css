@@ -429,3 +429,141 @@ body {
     transform: translateX(-30%);
     opacity: 0.9;
 }
+
+/* ------------------------------------------------------ */
+/* AIVO — ADMIN PREMIUM UI */
+/* ------------------------------------------------------ */
+
+/* Container général */
+.admin-container {
+    padding: 20px;
+}
+
+/* Titre principal */
+.aivo-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+/* Cartes premium */
+.aivo-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Titre de carte */
+.aivo-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+/* ------------------------------------------------------ */
+/* STATISTIQUES */
+/* ------------------------------------------------------ */
+
+.aivo-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.aivo-stat {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.aivo-stat-label {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.aivo-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ------------------------------------------------------ */
+/* ACTIONS RAPIDES */
+/* ------------------------------------------------------ */
+
+.aivo-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.aivo-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* Bouton danger */
+.aivo-btn-danger {
+    background: #ff3b30;
+    color: white;
+}
+.aivo-btn-danger:active {
+    background: #d92d25;
+}
+
+/* Bouton secondaire */
+.aivo-btn-secondary {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+.aivo-btn-secondary:active {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ------------------------------------------------------ */
+/* LISTE UTILISATEURS */
+/* ------------------------------------------------------ */
+
+.aivo-user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aivo-user-list li {
+    background: rgba(255,255,255,0.06);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aivo-user-list .user-name {
+    font-weight: 600;
+}
+
+.aivo-user-list .user-role {
+    opacity: 0.7;
+    font-size: 13px;
+}

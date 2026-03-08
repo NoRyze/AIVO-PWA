@@ -7,36 +7,57 @@
         <i class="icon f7-icons">menu</i>
       </a>
 
-
-      <div class="title">AIVO — Admin</div>
+      <div class="title">Espace Administrateur</div>
     </div>
   </div>
 
-  <div class="page-content">
+  <div class="page-content admin-container">
 
-    <!-- STATISTIQUES -->
-    <div class="block-title">Statistiques système</div>
-    <div class="list simple-list">
-      <ul>
-        <li>Utilisateurs actifs : <span id="stat-users">...</span></li>
-        <li>Sessions ouvertes : <span id="stat-sessions">...</span></li>
-        <li>IP suspectes : <span id="stat-suspicious">...</span></li>
-      </ul>
+    <!-- TITRE PRINCIPAL -->
+    <h1 class="aivo-title">Tableau de bord</h1>
+
+    <!-- SECTION STATISTIQUES -->
+    <div class="aivo-card">
+      <h2 class="aivo-card-title">Statistiques système</h2>
+
+      <div class="aivo-stats-grid">
+        <div class="aivo-stat">
+          <div class="aivo-stat-label">Utilisateurs actifs</div>
+          <div class="aivo-stat-value" id="stat-users">...</div>
+        </div>
+
+        <div class="aivo-stat">
+          <div class="aivo-stat-label">Sessions ouvertes</div>
+          <div class="aivo-stat-value" id="stat-sessions">...</div>
+        </div>
+
+        <div class="aivo-stat">
+          <div class="aivo-stat-label">IP suspectes</div>
+          <div class="aivo-stat-value" id="stat-suspicious">...</div>
+        </div>
+      </div>
     </div>
 
-    <!-- ACTIONS RAPIDES -->
-    <div class="block-title">Actions rapides</div>
-    <div class="list">
-      <ul>
-        <li><a href="#" id="btn-revoke-all" class="item-link">Révoquer toutes les sessions</a></li>
-        <li><a href="#" id="btn-view-logs" class="item-link">Voir les logs backend</a></li>
-      </ul>
+    <!-- SECTION ACTIONS RAPIDES -->
+    <div class="aivo-card">
+      <h2 class="aivo-card-title">Actions rapides</h2>
+
+      <div class="aivo-actions">
+        <a href="#" id="btn-revoke-all" class="aivo-btn aivo-btn-danger">
+          Révoquer toutes les sessions
+        </a>
+
+        <a href="#" id="btn-view-logs" class="aivo-btn aivo-btn-secondary">
+          Voir les logs backend
+        </a>
+      </div>
     </div>
 
-    <!-- UTILISATEURS -->
-    <div class="block-title">Utilisateurs</div>
-    <div class="list media-list">
-      <ul id="admin-users-list"></ul>
+    <!-- SECTION UTILISATEURS -->
+    <div class="aivo-card">
+      <h2 class="aivo-card-title">Utilisateurs</h2>
+
+      <ul id="admin-users-list" class="aivo-user-list"></ul>
     </div>
 
   </div>

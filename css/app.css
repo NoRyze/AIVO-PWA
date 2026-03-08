@@ -646,3 +646,19 @@ body {
     from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+.forgot-password-container {
+    display: flex;
+    justify-content: flex-end; /* Aligné à droite */
+    margin-top: 10px;
+    width: 100%;
+}
+
+.forgot-password-link {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    color: white;
+}

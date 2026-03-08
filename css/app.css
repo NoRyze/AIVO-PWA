@@ -695,3 +695,27 @@ body {
     transform: scale(0.96);
     background: rgba(255,255,255,0.18);
 }
+/* Centrage premium de la page Documents */
+.documents-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centre verticalement */
+    align-items: center;       /* centre horizontalement */
+    height: 100%;              /* occupe toute la page */
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Centrage du titre */
+.doc-title {
+    margin-bottom: 40px;
+}
+
+/* Les bulles restent en grille mais centrées */
+.doc-bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 350px; /* limite pour un rendu premium */
+}

@@ -2,7 +2,6 @@
   <div class="navbar">
     <div class="navbar-inner">
 
-      <!-- BOUTON MENU GAUCHE -->
       <a class="link panel-open aivo-menu-btn" data-panel="left">
         <i class="icon f7-icons">menu</i>
       </a>
@@ -15,21 +14,15 @@
 
     <h1 class="doc-title">Documents</h1>
 
-    <div id="categories-list" class="doc-bubbles">
+    <div class="doc-bubbles">
 
-      <div class="doc-bubble" data-doc="rang">VHM RANG</div>
-      <div class="doc-bubble" data-doc="pc">VHM PC</div>
-      <div class="doc-bubble" data-doc="log">VHM LOG</div>
-      <div class="doc-bubble" data-doc="kits">Descriptions des kits</div>
-      <div class="doc-bubble" data-doc="panne">Recherche de panne</div>
+      <div class="doc-bubble" onclick="app.views.main.router.navigate('/documents/rang/')">VHM RANG</div>
+      <div class="doc-bubble" onclick="app.views.main.router.navigate('/documents/pc/')">VHM PC</div>
+      <div class="doc-bubble" onclick="app.views.main.router.navigate('/documents/log/')">VHM LOG</div>
+      <div class="doc-bubble" onclick="app.views.main.router.navigate('/documents/kits/')">Descriptions des kits</div>
+      <div class="doc-bubble" onclick="app.views.main.router.navigate('/documents/panne/')">Recherche de panne</div>
 
     </div>
 
-    <!-- Zone où s'affichent les fichiers -->
-    <div id="doc-content" class="doc-content hidden"></div>
-
   </div>
 </div>
-
-
-

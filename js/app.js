@@ -5,7 +5,6 @@ import { login } from "./api.js";
 import { saveSession, getRole } from "./auth.js";
 import { loadAdminPage } from "./home-admin.js";
 import { loadLogsPage } from "./logs.js";
-import { loadDocumentsPage } from "./documents.js";
 import { loadHomeUserPage } from "./home-user.js";
 
 // -------------------------------------------------------------
@@ -61,8 +60,34 @@ var app = new Framework7({
 
         {
             path: '/documents/',
-            url: './pages/documents.html',
-            on: { pageInit: loadDocumentsPage }
+            url: './pages/documents.html'
+        },
+
+        {
+            path: '/documents/rang/',
+            url: './pages/documents-rang.html'
+        },
+
+        {
+            path: '/documents/pc/',
+            url: './pages/documents-pc.html'
+        },
+
+        {
+            path: '/documents/log/',
+            url: './pages/documents-log.html'
+        },
+
+        {
+            path: '/documents/kits/',
+            url: './pages/documents-kits.html'
+
+        },
+
+        {
+            path: '/documents/panne/',
+            url: './pages/documents-panne.html'
+
         },
 
         {

@@ -403,7 +403,32 @@ body {
     transform: translateX(-20%);
     opacity: 0;
 }
+/* ------------------------------------------------------ */
+/*  AIVO — SLIDE IDENTIQUE AU PANEL GAUCHE                */
+/* ------------------------------------------------------ */
 
+/* La page entre depuis la gauche comme le panel */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+/* Page active = position normale */
+.page.page-current {
+    transform: translateX(0);
+}
+
+/* Page sortante = glisse légèrement vers la gauche */
+.page.page-leave {
+    transform: translateX(-30%);
+    opacity: 0.9;
+}
 
 /* ------------------------------------------------------ */
 /* AIVO — ADMIN PREMIUM UI */

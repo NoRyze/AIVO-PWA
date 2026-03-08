@@ -148,29 +148,34 @@ document.addEventListener('click', async function (e) {
 // -------------------------------------------------------------
 document.addEventListener('click', function(e) {
 
+   // Modifier email
     if (e.target.id === 'btn-change-email') {
-        app.dialog.prompt("Nouvel e-mail :", function(newEmail) {
+        aivoPrompt("Nouvel e-mail :", "exemple@mail.com", function(newEmail) {
             console.log("Email modifié :", newEmail);
         });
     }
 
+    // Modifier mot de passe
     if (e.target.id === 'btn-change-password') {
-        app.dialog.prompt("Nouveau mot de passe :", function(newPass) {
+        aivoPrompt("Nouveau mot de passe :", "********", function(newPass) {
             console.log("Mot de passe modifié :", newPass);
         });
     }
 
+    // Contacter l’assistance
     if (e.target.id === 'btn-support') {
-        app.dialog.prompt("Message à l’administrateur :", function(msg) {
+        aivoPrompt("Message à l’assistance :", "Votre message…", function(msg) {
             console.log("Message envoyé :", msg);
         });
     }
 
+    // Supprimer le compte
     if (e.target.id === 'btn-delete-account') {
-        app.dialog.confirm("Supprimer votre compte ?", function() {
+        aivoConfirm("Voulez-vous vraiment supprimer votre compte ?", function() {
             console.log("Compte supprimé");
         });
     }
+
 });
 // -------------------------------------------------------------
 // DÉCONNEXION — BULLE AIVO + SUPPRESSION SESSION + RETOUR LOGIN
@@ -215,5 +220,49 @@ function aivoConfirm(message, onConfirm) {
     overlay.querySelector('.aivo-confirm-ok').onclick = () => {
         overlay.remove();
         onConfirm();
+    };
+}
+function aivoPrompt(message, placeholder, onSubmit) {
+    const overlay = document.createElement('div');
+    overlay.className = 'aivo-confirm-overlay';
+
+    overlay.innerHTML = `
+        <div class="aivo-confirm-box">
+            <div class="aivo-confirm-message">${message}</div>
+            <input 
+                type="text" 
+                class="aivo-input" 
+                placeholder="${placeholder}" 
+                style="
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 18px;
+                    border-radius: 12px;
+                    border: none;
+                    outline: none;
+                    background: rgba(255,255,255,0.15);
+                    color: white;
+                    font-size: 16px;
+                "
+            />
+            <div class="aivo-confirm-buttons">
+                <div class="aivo-confirm-btn aivo-confirm-cancel">Annuler</div>
+                <div class="aivo-confirm-btn aivo-confirm-ok">OK</div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const input = overlay.querySelector('.aivo-input');
+
+    overlay.querySelector('.aivo-confirm-cancel').onclick = () => {
+        overlay.remove();
+    };
+
+    overlay.querySelector('.aivo-confirm-ok').onclick = () => {
+        const value = input.value.trim();
+        overlay.remove();
+        onSubmit(value);
     };
 }

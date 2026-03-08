@@ -17,30 +17,39 @@
 <body>
     <div id="app">
 
-        <!-- PANEL GAUCHE -->
-        <div class="panel panel-left panel-cover">
-            <div class="panel-container">
+<!-- PANEL GAUCHE -->
+<div class="panel panel-left panel-cover">
+    <div class="panel-container">
 
-                <div class="panel-card">
-                    <div class="panel-title">Compte</div>
-                    <ul class="panel-links">
-                        <li><a href="/settings/" class="panel-link panel-close">Paramètres</a></li>
-                    </ul>
-                </div>
-
-                <div class="panel-card">
-                    <div class="panel-title">Navigation</div>
-                    <ul class="panel-links">
-                        <li><a href="/home-user/" class="panel-link panel-close">Accueil</a></li>
-                        <li><a href="/documents/" class="panel-link panel-close">Documents</a></li>
-                        <li><a href="/messages/" class="panel-link panel-close">Messages</a></li>
-                        <li><a href="#" id="panel-logout" class="panel-link panel-close">Déconnexion</a></li>
-                    </ul>
-                </div>
-
-            </div>
+        <div class="panel-card">
+            <div class="panel-title">Compte</div>
+            <ul class="panel-links">
+                <li><a href="/settings/" class="panel-link panel-close">Paramètres</a></li>
+            </ul>
         </div>
 
+        <div class="panel-card">
+            <div class="panel-title">Navigation</div>
+            <ul class="panel-links">
+
+                <!--  LIEN ADMIN (caché par défaut) -->
+                <li id="admin-dashboard-link" style="display:none;">
+                    <a href="/home-admin/" class="panel-link panel-close">
+                        <i class="icon f7-icons">square_grid_2x2</i>
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+
+                <!-- Liens existants -->
+                <li><a href="/home-user/" class="panel-link panel-close">Accueil</a></li>
+                <li><a href="/documents/" class="panel-link panel-close">Documents</a></li>
+                <li><a href="/messages/" class="panel-link panel-close">Messages</a></li>
+                <li><a href="#" id="panel-logout" class="panel-link panel-close">Déconnexion</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
         <!-- VUE PRINCIPALE -->
         <div class="view view-main"></div>
 

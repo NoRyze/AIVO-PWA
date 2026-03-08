@@ -567,3 +567,19 @@ body {
     opacity: 0.7;
     font-size: 13px;
 }
+/* ------------------------------------------------------ */
+/* AIVO — ADMIN : CENTRAGE DES TITRES */
+/* ------------------------------------------------------ */
+
+/* Titre principal centré */
+.aivo-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* Titre navbar centré malgré le bouton menu */
+.navbar .title {
+    text-align: center;
+    width: 100%;
+    margin-left: -32px; /* compense le bouton menu */
+}

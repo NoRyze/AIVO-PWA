@@ -95,6 +95,14 @@ app.on('page:beforeout', (page) => {
 });
 
 // -------------------------------------------------------------
+// AFFICHAGE DU LIEN ADMIN DANS LE PANEL
+// -------------------------------------------------------------
+if (role === "admin") {
+    const adminLink = document.getElementById('admin-dashboard-link');
+    if (adminLink) adminLink.style.display = 'block';
+}
+
+// -------------------------------------------------------------
 // REDIRECTION AUTOMATIQUE AU DÉMARRAGE
 // -------------------------------------------------------------
 const role = getRole();

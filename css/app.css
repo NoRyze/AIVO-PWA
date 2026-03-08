@@ -717,17 +717,17 @@ body {
     display: flex;
     flex-direction: column;
 
-    justify-content: space-between; /* ⭐ espace égal haut / entre / bas */
+    justify-content: space-between; /* espace égal haut / entre / bas */
     align-items: center;
 
-    padding: 20px 0;
+    padding: 10px 0; /* réduit légèrement le padding global */
 }
 
-/* Bulles : même taille pour toutes */
+/* Bulles : même taille pour toutes, largeur réduite */
 .doc-bubble {
-    width: 100%;
-    max-width: 350px;
-    padding: 18px 0;
+    width: 85%;              /* ⭐ largeur réduite (au lieu de 100%) */
+    max-width: 300px;        /* ⭐ plus étroit, plus premium */
+    padding: 16px 0;         /* légèrement plus fin */
 
     text-align: center;
     border-radius: 14px;
@@ -736,12 +736,13 @@ body {
     backdrop-filter: blur(10px);
 
     color: white;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
 
     transition: transform 0.2s ease;
 }
 
+/* Effet tactile */
 .doc-bubble:active {
     transform: scale(0.97);
 }

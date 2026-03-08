@@ -704,29 +704,44 @@ body {
     padding: 20px;
 }
 
-/* Le titre reste en haut naturellement */
+/* Le titre reste en haut */
 .doc-title {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Centrage vertical uniquement des bulles */
+/* Les bulles occupent tout l’espace restant avec un espacement parfait */
 .doc-bubbles {
+    flex: 1; /* occupe tout l’espace disponible */
     display: flex;
     flex-direction: column;
-    gap: 20px;
 
-    /* ⭐ Le secret : occupe tout l’espace restant */
-    flex: 1;
-
-    /* ⭐ Centre verticalement dans l’espace restant */
-    justify-content: center;
-
-    /* Centre horizontalement */
+    justify-content: space-between; /* ⭐ espace égal haut / entre / bas */
     align-items: center;
 
-    max-width: 350px;
+    padding: 20px 0;
+}
+
+/* Bulles : même taille pour toutes */
+.doc-bubble {
     width: 100%;
-    margin: 0 auto;
+    max-width: 350px;
+    padding: 18px 0;
+
+    text-align: center;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: transform 0.2s ease;
+}
+
+.doc-bubble:active {
+    transform: scale(0.97);
 }
